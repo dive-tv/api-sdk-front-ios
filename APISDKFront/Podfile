@@ -1,0 +1,42 @@
+platform :ios, '9.0'
+use_frameworks!
+
+workspace 'APISDKFront.xcworkspace'
+
+def apiSdkFront_pods
+    pod 'AWSCore', :git => 'https://github.com/animeshp/aws-sdk-ios.git', :commit => '9fff1e2'
+    pod 'Analytics'
+    pod 'AWSCognito'
+    pod 'AWSMobileAnalytics'
+    pod 'AppsFlyerFramework'
+    pod 'Segment-Apptimize'
+    pod 'Kingfisher', "~> 3.0"
+    pod 'youtube-ios-player-helper', "~> 0.1.4"
+    pod 'SwiftyJSON', "3.0.0"
+    pod 'Crashlytics'
+end
+
+def diveApi_pods
+    pod 'Alamofire', "~> 4.0"
+end
+
+
+target 'APISDKFront' do
+    project '../../api-sdk-front-ios/APISDKFront/APISDKFront.xcodeproj'
+    
+    apiSdkFront_pods
+end
+
+target 'DiveApi' do
+    project '../../dive-rest-ios/DiveApi/DiveApi.xcodeproj'
+    
+    diveApi_pods
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+    end
+  end
+end
