@@ -1,0 +1,6 @@
+[submodule "APISDKFront/APISDKFront/Tools"]
+	path = APISDKFront/APISDKFront/Tools
+	url = https://github.com/dive-tv/tools_ios.git
+[submodule "APISDKFront/APISDKFront/Analytics"]
+	path = APISDKFront/APISDKFront/Analytics
+	url = https://github.com/dive-tv/analytics_ios.git
