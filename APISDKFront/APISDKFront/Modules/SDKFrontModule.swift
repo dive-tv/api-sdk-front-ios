@@ -9,7 +9,7 @@
 import UIKit
 import DiveApi
 
-open class SDKFrontModule : UITableViewCell, Validatable{
+open class SDKFrontModule : UICollectionViewCell, Validatable{
     
     internal var cardDetail : CardDetailResponse!;
    

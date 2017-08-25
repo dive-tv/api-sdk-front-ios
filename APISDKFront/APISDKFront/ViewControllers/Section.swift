@@ -18,9 +18,9 @@ protocol SectionDelegate : class {
     func updateIndexPathAnalytics(indexPath : IndexPath, indexPathsAnalytics : [IndexPath]);
 }
 
-class Section : UIViewController, SectionDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate var configSection : ConfigSection!;
     fileprivate var cardDetail : CardDetailResponse!
@@ -40,14 +40,6 @@ class Section : UIViewController, SectionDelegate, UITableViewDelegate, UITableV
     }
     
     //MARK: INIT
-    
-    
-//    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, _configSection : ConfigSection, _cardDetail : CardDetail) {
-//        
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
-//        self.configSection = _configSection;
-//        self.cardDetail = _cardDetail;
-//    }
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, _configSection : ConfigSection, _cardDetail : CardDetailResponse) {
         
@@ -73,29 +65,23 @@ class Section : UIViewController, SectionDelegate, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         
         self.view.backgroundColor = UIColor.white;
-        self.tableView.backgroundColor = UIColor.white;
-        
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero);
-        self.tableView.separatorStyle = .none;
-        self.tableView.rowHeight = UITableViewAutomaticDimension;
-        self.tableView.estimatedRowHeight = 100;
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "nativeCell");
+        self.collectionView.backgroundColor = UIColor.white;
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "nativeCell")
         
         if(self.isMain){
             
-            let like = UIBarButtonItem(image: (self.cardDetail.user?.isLiked)! ? #imageLiteral(resourceName: "ico_like_active") : #imageLiteral(resourceName: "ico_like"), style: .plain, target: self, action: #selector(Section.saveCard));
+            /*let like = UIBarButtonItem(image: (self.cardDetail.user?.isLiked)! ? #imageLiteral(resourceName: "ico_like_active") : #imageLiteral(resourceName: "ico_like"), style: .plain, target: self, action: #selector(Section.saveCard));
             like.tintColor = UIColor.diveWarmGreyColor();
             
             let more = UIBarButtonItem(image: #imageLiteral(resourceName: "ico_more"), style: .plain, target: self, action: #selector(Section.openOptions));
             more.tintColor = UIColor.diveWarmGreyColor();
             
-            self.navigationItem.rightBarButtonItems = [more, like];
+            self.navigationItem.rightBarButtonItems = [more, like];*/
         }
         
-        //let appName = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String;
-        
         for module in self.configSection.arrayModules {
-        self.tableView?.register(UINib(nibName: module.moduleName!, bundle: Bundle(for: self.classForCoder)), forCellReuseIdentifier: module.moduleName!);
+            
+            self.collectionView.register(UINib(nibName: module.moduleName!, bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier: module.moduleName!)
         }
     }
     
@@ -104,7 +90,7 @@ class Section : UIViewController, SectionDelegate, UITableViewDelegate, UITableV
         
         self.indexPathsAnalytics.removeAll();
         self.finishReload = false;
-        self.tableView.reloadData {
+        self.collectionView.reloadData {
             self.checkVisibleCells();
             self.finishReload = true;
         }
@@ -121,19 +107,19 @@ class Section : UIViewController, SectionDelegate, UITableViewDelegate, UITableV
         
         var offset = _offset;
         
-        if (_offset != 0 && _offset + self.tableView.frame.height > self.tableView.contentSize.height) {
-            offset -= abs(self.tableView.contentSize.height - (offset + self.tableView.frame.height));
+        if (_offset != 0 && _offset + self.collectionView.frame.height > self.collectionView.contentSize.height) {
+            offset -= abs(self.collectionView.contentSize.height - (offset + self.collectionView.frame.height));
         }
         
         return offset < 0.0 ? _offset : offset;
     }
     
     private func checkVisibleCells(){
-        if let visibleIndexPaths = self.tableView.indexPathsForVisibleRows, self.tableView.visibleCells.count > 0{
-            for indexPath in visibleIndexPaths{
+        if !self.collectionView.indexPathsForVisibleItems.isEmpty && self.collectionView.visibleCells.count > 0{
+            for indexPath in self.collectionView.indexPathsForVisibleItems{
                 if(self.indexPathsAnalytics[indexPath] == nil){
                     if(indexPath.row != self.configSection.arrayModules.count){
-                        if let cell = self.tableView.cellForRow(at: indexPath) as? SDKFrontModule{
+                        if let cell = self.collectionView.cellForItem(at: indexPath) as? SDKFrontModule{
                             self.indexPathsAnalytics[indexPath] = [IndexPath]();
                             self.sentModuleImpression(name: "\(cell.classForCoder)");
                             cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
@@ -158,17 +144,17 @@ class Section : UIViewController, SectionDelegate, UITableViewDelegate, UITableV
      */
     func reloadTableAndOffset() {
         
-        let offset = self.tableView.contentOffset.y;
-        self.tableView.reloadData();
+        let offset = self.collectionView.contentOffset.y;
+        self.collectionView.reloadData();
         
-        if (self.tableView.contentSize.height > self.tableView.frame.height) {
-            self.tableView.layoutIfNeeded();
-            self.tableView.contentOffset.y = self.getScrollViewOffset(offset);
+        if (self.collectionView.contentSize.height > self.collectionView.frame.height) {
+            self.collectionView.layoutIfNeeded();
+            self.collectionView.contentOffset.y = self.getScrollViewOffset(offset);
         }
     }
     
     func reloadTable() {
-        self.tableView.reloadData();
+        self.collectionView.reloadData();
     }
     
     
@@ -180,46 +166,36 @@ class Section : UIViewController, SectionDelegate, UITableViewDelegate, UITableV
         self.indexPathsAnalytics[indexPath] = indexPathsAnalytics;
     }
     
-    // MARK: UITableViewDataSource
+    // MARK: UICollectionViewDataSource
     
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.configSection.arrayModules.count;
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.configSection.arrayModules.count
     }
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if(indexPath.row == self.configSection.arrayModules.count){
-            return 75;
-        }
-        return UITableViewAutomaticDimension;
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.configSection.arrayModules[indexPath.row].moduleName!, for: indexPath) as! SDKFrontModule;
+        cell.sectionDelegate = self;
+        cell.cardDelegate = self.cardDelegate;
+        //cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
+        
+        cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row], _cardDetail: self.cardDetail);
+        return cell;
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        if(indexPath.row == self.configSection.arrayModules.count){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "nativeCell", for: indexPath);
-            cell.selectionStyle = .none;
-            cell.backgroundColor = UIColor.clear;
-            cell.contentView.backgroundColor = UIColor.clear;
-            return cell;
-        }
-        else{
-            
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: self.configSection.arrayModules[(indexPath as NSIndexPath).row].moduleName!) as! SDKFrontModule;
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
-            cell.sectionDelegate = self;
-            cell.cardDelegate = self.cardDelegate;
-            //cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
-           
-           cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row], _cardDetail: self.cardDetail);
-            return cell;
-        }
+    //MARK: UICollectionViewDelegateFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 50, height: 50)
     }
+    
     
     // MARK: Selector
     func saveCard(){
