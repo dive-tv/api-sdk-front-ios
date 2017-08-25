@@ -35,46 +35,18 @@
 		32D71B1E1F4ED7F4000992B5 /* CardDetailJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AE81F4ED7F4000992B5 /* CardDetailJson.swift */; };
 		32D71B1F1F4ED7F4000992B5 /* CardDetailRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AE91F4ED7F4000992B5 /* CardDetailRender.swift */; };
 		32D71B201F4ED7F4000992B5 /* ModuleValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AEA1F4ED7F4000992B5 /* ModuleValidator.swift */; };
-		32D71B211F4ED7F4000992B5 /* AdwardItemContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AEC1F4ED7F4000992B5 /* AdwardItemContainerData.swift */; };
-		32D71B221F4ED7F4000992B5 /* AdwardsContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AED1F4ED7F4000992B5 /* AdwardsContainerData.swift */; };
-		32D71B231F4ED7F4000992B5 /* CardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AEE1F4ED7F4000992B5 /* CardDetail.swift */; };
 		32D71B241F4ED7F4000992B5 /* CardDetailErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AEF1F4ED7F4000992B5 /* CardDetailErrors.swift */; };
-		32D71B251F4ED7F4000992B5 /* CatalogContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF01F4ED7F4000992B5 /* CatalogContainerData.swift */; };
-		32D71B261F4ED7F4000992B5 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF11F4ED7F4000992B5 /* Chapter.swift */; };
 		32D71B271F4ED7F4000992B5 /* ConfigModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF21F4ED7F4000992B5 /* ConfigModule.swift */; };
 		32D71B281F4ED7F4000992B5 /* ConfigSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF31F4ED7F4000992B5 /* ConfigSection.swift */; };
-		32D71B291F4ED7F4000992B5 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF41F4ED7F4000992B5 /* Container.swift */; };
 		32D71B2A1F4ED7F4000992B5 /* ContainerContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF51F4ED7F4000992B5 /* ContainerContentType.swift */; };
-		32D71B2B1F4ED7F4000992B5 /* ContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF61F4ED7F4000992B5 /* ContainerData.swift */; };
 		32D71B2C1F4ED7F4000992B5 /* ContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF71F4ED7F4000992B5 /* ContainerType.swift */; };
 		32D71B2D1F4ED7F4000992B5 /* DataModelErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF81F4ED7F4000992B5 /* DataModelErrors.swift */; };
-		32D71B2E1F4ED7F4000992B5 /* DupleRelationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF91F4ED7F4000992B5 /* DupleRelationData.swift */; };
 		32D71B2F1F4ED7F4000992B5 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AFA1F4ED7F4000992B5 /* ErrorManager.swift */; };
-		32D71B301F4ED7F4000992B5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AFB1F4ED7F4000992B5 /* Image.swift */; };
-		32D71B311F4ED7F4000992B5 /* ImageContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AFC1F4ED7F4000992B5 /* ImageContainerData.swift */; };
-		32D71B321F4ED7F4000992B5 /* ItemProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AFD1F4ED7F4000992B5 /* ItemProduct.swift */; };
-		32D71B331F4ED7F4000992B5 /* LinkContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AFE1F4ED7F4000992B5 /* LinkContainerData.swift */; };
-		32D71B341F4ED7F4000992B5 /* ListingContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AFF1F4ED7F4000992B5 /* ListingContainerData.swift */; };
-		32D71B351F4ED7F4000992B5 /* MapContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B001F4ED7F4000992B5 /* MapContainerData.swift */; };
-		32D71B361F4ED7F4000992B5 /* MiniCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B011F4ED7F4000992B5 /* MiniCard.swift */; };
-		32D71B371F4ED7F4000992B5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B021F4ED7F4000992B5 /* Product.swift */; };
 		32D71B381F4ED7F4000992B5 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B031F4ED7F4000992B5 /* ProductCategory.swift */; };
-		32D71B391F4ED7F4000992B5 /* RatingContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B041F4ED7F4000992B5 /* RatingContainerData.swift */; };
-		32D71B3A1F4ED7F4000992B5 /* Relation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B051F4ED7F4000992B5 /* Relation.swift */; };
 		32D71B3B1F4ED7F4000992B5 /* RelationContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B061F4ED7F4000992B5 /* RelationContentType.swift */; };
-		32D71B3C1F4ED7F4000992B5 /* RelationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B071F4ED7F4000992B5 /* RelationData.swift */; };
 		32D71B3D1F4ED7F4000992B5 /* RelationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B081F4ED7F4000992B5 /* RelationType.swift */; };
-		32D71B3E1F4ED7F4000992B5 /* SeasonsContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B091F4ED7F4000992B5 /* SeasonsContainerData.swift */; };
-		32D71B3F1F4ED7F4000992B5 /* SingleRelationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B0A1F4ED7F4000992B5 /* SingleRelationData.swift */; };
-		32D71B401F4ED7F4000992B5 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B0B1F4ED7F4000992B5 /* Source.swift */; };
-		32D71B411F4ED7F4000992B5 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B0C1F4ED7F4000992B5 /* Sync.swift */; };
 		32D71B421F4ED7F4000992B5 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B0D1F4ED7F4000992B5 /* Target.swift */; };
-		32D71B431F4ED7F4000992B5 /* TextContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B0E1F4ED7F4000992B5 /* TextContainerData.swift */; };
-		32D71B441F4ED7F4000992B5 /* TravelProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B0F1F4ED7F4000992B5 /* TravelProduct.swift */; };
-		32D71B451F4ED7F4000992B5 /* TVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B101F4ED7F4000992B5 /* TVEvent.swift */; };
-		32D71B461F4ED7F4000992B5 /* TVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B111F4ED7F4000992B5 /* TVGrid.swift */; };
 		32D71B471F4ED7F4000992B5 /* TypeOfCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B121F4ED7F4000992B5 /* TypeOfCard.swift */; };
-		32D71B481F4ED7F4000992B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B131F4ED7F4000992B5 /* User.swift */; };
 		32D71B491F4ED7F4000992B5 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B141F4ED7F4000992B5 /* Validatable.swift */; };
 		32D71B4A1F4ED7F4000992B5 /* SDKFrontModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B161F4ED7F4000992B5 /* SDKFrontModule.swift */; };
 		32D71B4C1F4ED7F4000992B5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B1A1F4ED7F4000992B5 /* Section.swift */; };
@@ -122,46 +94,18 @@
 		32D71AE81F4ED7F4000992B5 /* CardDetailJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailJson.swift; sourceTree = "<group>"; };
 		32D71AE91F4ED7F4000992B5 /* CardDetailRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailRender.swift; sourceTree = "<group>"; };
 		32D71AEA1F4ED7F4000992B5 /* ModuleValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleValidator.swift; sourceTree = "<group>"; };
-		32D71AEC1F4ED7F4000992B5 /* AdwardItemContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdwardItemContainerData.swift; sourceTree = "<group>"; };
-		32D71AED1F4ED7F4000992B5 /* AdwardsContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdwardsContainerData.swift; sourceTree = "<group>"; };
-		32D71AEE1F4ED7F4000992B5 /* CardDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetail.swift; sourceTree = "<group>"; };
 		32D71AEF1F4ED7F4000992B5 /* CardDetailErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailErrors.swift; sourceTree = "<group>"; };
-		32D71AF01F4ED7F4000992B5 /* CatalogContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogContainerData.swift; sourceTree = "<group>"; };
-		32D71AF11F4ED7F4000992B5 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		32D71AF21F4ED7F4000992B5 /* ConfigModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigModule.swift; sourceTree = "<group>"; };
 		32D71AF31F4ED7F4000992B5 /* ConfigSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigSection.swift; sourceTree = "<group>"; };
-		32D71AF41F4ED7F4000992B5 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		32D71AF51F4ED7F4000992B5 /* ContainerContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerContentType.swift; sourceTree = "<group>"; };
-		32D71AF61F4ED7F4000992B5 /* ContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerData.swift; sourceTree = "<group>"; };
 		32D71AF71F4ED7F4000992B5 /* ContainerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerType.swift; sourceTree = "<group>"; };
 		32D71AF81F4ED7F4000992B5 /* DataModelErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelErrors.swift; sourceTree = "<group>"; };
-		32D71AF91F4ED7F4000992B5 /* DupleRelationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DupleRelationData.swift; sourceTree = "<group>"; };
 		32D71AFA1F4ED7F4000992B5 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
-		32D71AFB1F4ED7F4000992B5 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		32D71AFC1F4ED7F4000992B5 /* ImageContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainerData.swift; sourceTree = "<group>"; };
-		32D71AFD1F4ED7F4000992B5 /* ItemProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemProduct.swift; sourceTree = "<group>"; };
-		32D71AFE1F4ED7F4000992B5 /* LinkContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkContainerData.swift; sourceTree = "<group>"; };
-		32D71AFF1F4ED7F4000992B5 /* ListingContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingContainerData.swift; sourceTree = "<group>"; };
-		32D71B001F4ED7F4000992B5 /* MapContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapContainerData.swift; sourceTree = "<group>"; };
-		32D71B011F4ED7F4000992B5 /* MiniCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniCard.swift; sourceTree = "<group>"; };
-		32D71B021F4ED7F4000992B5 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		32D71B031F4ED7F4000992B5 /* ProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
-		32D71B041F4ED7F4000992B5 /* RatingContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingContainerData.swift; sourceTree = "<group>"; };
-		32D71B051F4ED7F4000992B5 /* Relation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relation.swift; sourceTree = "<group>"; };
 		32D71B061F4ED7F4000992B5 /* RelationContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationContentType.swift; sourceTree = "<group>"; };
-		32D71B071F4ED7F4000992B5 /* RelationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationData.swift; sourceTree = "<group>"; };
 		32D71B081F4ED7F4000992B5 /* RelationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationType.swift; sourceTree = "<group>"; };
-		32D71B091F4ED7F4000992B5 /* SeasonsContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsContainerData.swift; sourceTree = "<group>"; };
-		32D71B0A1F4ED7F4000992B5 /* SingleRelationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleRelationData.swift; sourceTree = "<group>"; };
-		32D71B0B1F4ED7F4000992B5 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
-		32D71B0C1F4ED7F4000992B5 /* Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		32D71B0D1F4ED7F4000992B5 /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		32D71B0E1F4ED7F4000992B5 /* TextContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextContainerData.swift; sourceTree = "<group>"; };
-		32D71B0F1F4ED7F4000992B5 /* TravelProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelProduct.swift; sourceTree = "<group>"; };
-		32D71B101F4ED7F4000992B5 /* TVEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVEvent.swift; sourceTree = "<group>"; };
-		32D71B111F4ED7F4000992B5 /* TVGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGrid.swift; sourceTree = "<group>"; };
 		32D71B121F4ED7F4000992B5 /* TypeOfCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeOfCard.swift; sourceTree = "<group>"; };
-		32D71B131F4ED7F4000992B5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32D71B141F4ED7F4000992B5 /* Validatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validatable.swift; sourceTree = "<group>"; };
 		32D71B161F4ED7F4000992B5 /* SDKFrontModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKFrontModule.swift; sourceTree = "<group>"; };
 		32D71B1A1F4ED7F4000992B5 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -320,46 +264,18 @@
 		32D71AEB1F4ED7F4000992B5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				32D71AEC1F4ED7F4000992B5 /* AdwardItemContainerData.swift */,
-				32D71AED1F4ED7F4000992B5 /* AdwardsContainerData.swift */,
-				32D71AEE1F4ED7F4000992B5 /* CardDetail.swift */,
 				32D71AEF1F4ED7F4000992B5 /* CardDetailErrors.swift */,
-				32D71AF01F4ED7F4000992B5 /* CatalogContainerData.swift */,
-				32D71AF11F4ED7F4000992B5 /* Chapter.swift */,
 				32D71AF21F4ED7F4000992B5 /* ConfigModule.swift */,
 				32D71AF31F4ED7F4000992B5 /* ConfigSection.swift */,
-				32D71AF41F4ED7F4000992B5 /* Container.swift */,
 				32D71AF51F4ED7F4000992B5 /* ContainerContentType.swift */,
-				32D71AF61F4ED7F4000992B5 /* ContainerData.swift */,
 				32D71AF71F4ED7F4000992B5 /* ContainerType.swift */,
 				32D71AF81F4ED7F4000992B5 /* DataModelErrors.swift */,
-				32D71AF91F4ED7F4000992B5 /* DupleRelationData.swift */,
 				32D71AFA1F4ED7F4000992B5 /* ErrorManager.swift */,
-				32D71AFB1F4ED7F4000992B5 /* Image.swift */,
-				32D71AFC1F4ED7F4000992B5 /* ImageContainerData.swift */,
-				32D71AFD1F4ED7F4000992B5 /* ItemProduct.swift */,
-				32D71AFE1F4ED7F4000992B5 /* LinkContainerData.swift */,
-				32D71AFF1F4ED7F4000992B5 /* ListingContainerData.swift */,
-				32D71B001F4ED7F4000992B5 /* MapContainerData.swift */,
-				32D71B011F4ED7F4000992B5 /* MiniCard.swift */,
-				32D71B021F4ED7F4000992B5 /* Product.swift */,
 				32D71B031F4ED7F4000992B5 /* ProductCategory.swift */,
-				32D71B041F4ED7F4000992B5 /* RatingContainerData.swift */,
-				32D71B051F4ED7F4000992B5 /* Relation.swift */,
 				32D71B061F4ED7F4000992B5 /* RelationContentType.swift */,
-				32D71B071F4ED7F4000992B5 /* RelationData.swift */,
 				32D71B081F4ED7F4000992B5 /* RelationType.swift */,
-				32D71B091F4ED7F4000992B5 /* SeasonsContainerData.swift */,
-				32D71B0A1F4ED7F4000992B5 /* SingleRelationData.swift */,
-				32D71B0B1F4ED7F4000992B5 /* Source.swift */,
-				32D71B0C1F4ED7F4000992B5 /* Sync.swift */,
 				32D71B0D1F4ED7F4000992B5 /* Target.swift */,
-				32D71B0E1F4ED7F4000992B5 /* TextContainerData.swift */,
-				32D71B0F1F4ED7F4000992B5 /* TravelProduct.swift */,
-				32D71B101F4ED7F4000992B5 /* TVEvent.swift */,
-				32D71B111F4ED7F4000992B5 /* TVGrid.swift */,
 				32D71B121F4ED7F4000992B5 /* TypeOfCard.swift */,
-				32D71B131F4ED7F4000992B5 /* User.swift */,
 				32D71B141F4ED7F4000992B5 /* Validatable.swift */,
 			);
 			path = Data;
@@ -514,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APISDKFront/Pods-APISDKFront-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../../api-sdk-test-app-ios/APISDKTestApp/Pods/Target Support Files/Pods-APISDKFront/Pods-APISDKFront-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -524,70 +440,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32D71B411F4ED7F4000992B5 /* Sync.swift in Sources */,
 				32D71B2D1F4ED7F4000992B5 /* DataModelErrors.swift in Sources */,
-				32D71B231F4ED7F4000992B5 /* CardDetail.swift in Sources */,
 				32D71B281F4ED7F4000992B5 /* ConfigSection.swift in Sources */,
-				32D71B401F4ED7F4000992B5 /* Source.swift in Sources */,
 				32D71B381F4ED7F4000992B5 /* ProductCategory.swift in Sources */,
 				32D71B2A1F4ED7F4000992B5 /* ContainerContentType.swift in Sources */,
 				3236001B1F502D22000CED94 /* ToolsExtensions.swift in Sources */,
 				323600031F502D15000CED94 /* Constant.swift in Sources */,
 				32D71B491F4ED7F4000992B5 /* Validatable.swift in Sources */,
 				323600221F502D22000CED94 /* SCSiriWaveformView.m in Sources */,
-				32D71B361F4ED7F4000992B5 /* MiniCard.swift in Sources */,
 				3236001C1F502D22000CED94 /* Measure.swift in Sources */,
 				32D71B201F4ED7F4000992B5 /* ModuleValidator.swift in Sources */,
-				32D71B311F4ED7F4000992B5 /* ImageContainerData.swift in Sources */,
-				32D71B341F4ED7F4000992B5 /* ListingContainerData.swift in Sources */,
 				32D71B1D1F4ED7F4000992B5 /* CardDetailBuilder.swift in Sources */,
 				32D71B2C1F4ED7F4000992B5 /* ContainerType.swift in Sources */,
-				32D71B301F4ED7F4000992B5 /* Image.swift in Sources */,
-				32D71B251F4ED7F4000992B5 /* CatalogContainerData.swift in Sources */,
-				32D71B3F1F4ED7F4000992B5 /* SingleRelationData.swift in Sources */,
-				32D71B3E1F4ED7F4000992B5 /* SeasonsContainerData.swift in Sources */,
 				323600021F502D15000CED94 /* DiveAuthenticatedIdentityProvider.swift in Sources */,
 				32D71B241F4ED7F4000992B5 /* CardDetailErrors.swift in Sources */,
-				32D71B371F4ED7F4000992B5 /* Product.swift in Sources */,
 				32D71B3B1F4ED7F4000992B5 /* RelationContentType.swift in Sources */,
 				32D71B271F4ED7F4000992B5 /* ConfigModule.swift in Sources */,
 				32D71B421F4ED7F4000992B5 /* Target.swift in Sources */,
-				32D71B3C1F4ED7F4000992B5 /* RelationData.swift in Sources */,
 				323600261F502DE6000CED94 /* APISDKExtensions.swift in Sources */,
-				32D71B481F4ED7F4000992B5 /* User.swift in Sources */,
 				3236001E1F502D22000CED94 /* MZSelectableLabel.m in Sources */,
 				323600051F502D15000CED94 /* SEGAppsFlyerIntegration.m in Sources */,
 				32D71B1C1F4ED7F4000992B5 /* BaseCardDetailBuilder.swift in Sources */,
 				32D71B471F4ED7F4000992B5 /* TypeOfCard.swift in Sources */,
 				32D71B3D1F4ED7F4000992B5 /* RelationType.swift in Sources */,
-				32D71B331F4ED7F4000992B5 /* LinkContainerData.swift in Sources */,
 				32D71B4A1F4ED7F4000992B5 /* SDKFrontModule.swift in Sources */,
-				32D71B391F4ED7F4000992B5 /* RatingContainerData.swift in Sources */,
 				323600191F502D22000CED94 /* AnchorImage.swift in Sources */,
-				32D71B221F4ED7F4000992B5 /* AdwardsContainerData.swift in Sources */,
-				32D71B431F4ED7F4000992B5 /* TextContainerData.swift in Sources */,
 				32D71B1F1F4ED7F4000992B5 /* CardDetailRender.swift in Sources */,
-				32D71B2B1F4ED7F4000992B5 /* ContainerData.swift in Sources */,
 				323600201F502D22000CED94 /* UIColor+Equalable.m in Sources */,
 				32D71B2F1F4ED7F4000992B5 /* ErrorManager.swift in Sources */,
-				32D71B2E1F4ED7F4000992B5 /* DupleRelationData.swift in Sources */,
-				32D71B351F4ED7F4000992B5 /* MapContainerData.swift in Sources */,
 				32DF2B631F4F0A0B008D107B /* DiveFrontSDK.swift in Sources */,
 				32D71B4C1F4ED7F4000992B5 /* Section.swift in Sources */,
-				32D71B461F4ED7F4000992B5 /* TVGrid.swift in Sources */,
-				32D71B441F4ED7F4000992B5 /* TravelProduct.swift in Sources */,
 				32D71B1E1F4ED7F4000992B5 /* CardDetailJson.swift in Sources */,
 				323600071F502D15000CED94 /* SegAppsFlyerIntegrationFactory.m in Sources */,
-				32D71B3A1F4ED7F4000992B5 /* Relation.swift in Sources */,
-				32D71B321F4ED7F4000992B5 /* ItemProduct.swift in Sources */,
 				323600241F502D22000CED94 /* Utils.swift in Sources */,
 				323600011F502D15000CED94 /* AnalyticsManager.swift in Sources */,
 				323600231F502D22000CED94 /* SynchroLoadingAnimationView.swift in Sources */,
-				32D71B291F4ED7F4000992B5 /* Container.swift in Sources */,
-				32D71B211F4ED7F4000992B5 /* AdwardItemContainerData.swift in Sources */,
 				3236001A1F502D22000CED94 /* DiveWaterFallLayout.swift in Sources */,
-				32D71B451F4ED7F4000992B5 /* TVEvent.swift in Sources */,
-				32D71B261F4ED7F4000992B5 /* Chapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

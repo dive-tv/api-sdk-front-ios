@@ -15,7 +15,7 @@ public protocol RestSDKFrontDelegate : class{
     func shareOptions(withcardId cardid: String)
 }
 
-private typealias completionBlockGetCard = (CardDetail)->Void;
+private typealias completionBlockGetCard = (CardDetailResponse)->Void;
 
 class BaseCardDetailBuilder : NSObject{
     
@@ -24,7 +24,7 @@ class BaseCardDetailBuilder : NSObject{
     internal var mainKeySection : String?;
     internal var configJSON = [String : String]();
     private weak var restSDKFrontDelegate : RestSDKFrontDelegate?;
-    private var relations : [Relation]?;
+    private var relations : [RelationModule]?;
     private var bundle : Bundle
     
     fileprivate var moduleValidator : ModuleValidator!;
@@ -39,7 +39,7 @@ class BaseCardDetailBuilder : NSObject{
      
      - returns: self
      */
-    init(styleConfig : JSON? = nil, restSDKDelegate : RestSDKFrontDelegate, bundle : Bundle, relations : [Relation]? = nil){
+    init(styleConfig : JSON? = nil, restSDKDelegate : RestSDKFrontDelegate, bundle : Bundle, relations : [RelationModule]? = nil){
         
         self.bundle = bundle
         

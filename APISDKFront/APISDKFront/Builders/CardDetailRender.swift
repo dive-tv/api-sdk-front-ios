@@ -36,8 +36,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
     fileprivate var sectionsData : [String:ConfigSection]!;
     fileprivate var navigationController : UINavigationController!;
     fileprivate var mainSectionKey : String!;
-    fileprivate var cardDetail : CardDetail!;
-    fileprivate var cardDetailResponse: CardDetailResponse!
+    fileprivate var cardDetail: CardDetailResponse!
     
     private weak var restSDKDelegate : RestSDKFrontDelegate?;
     
@@ -51,7 +50,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
         self.sectionsData = _sectionsData;
         self.navigationController = _navigationController;
         self.mainSectionKey = _mainSectionKey;
-        self.cardDetailResponse = _cardDetail
+        self.cardDetail = _cardDetail
         self.restSDKDelegate = restSDKDelegate;
         
        
@@ -111,7 +110,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
      - returns: the section created with the delegate assigned
      */
     func createSection (_ _keyForSection : String) -> Section {
-        let section = Section(nibName: "Section", bundle: Bundle(for: self.classForCoder), _configSection: self.sectionsData[_keyForSection]!, _cardDetail: self.cardDetailResponse)
+        let section = Section(nibName: "Section", bundle: Bundle(for: self.classForCoder), _configSection: self.sectionsData[_keyForSection]!, _cardDetail: self.cardDetail)
         section.cardDelegate = self;
         return section;
     }
@@ -129,7 +128,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
         var sections = [Section]()
         
         for key in _keyForSections {
-            let section = Section(nibName: "Section", bundle:  Bundle(for: self.classForCoder), _configSection: self.sectionsData[key]!, _cardDetail: self.cardDetailResponse)
+            let section = Section(nibName: "Section", bundle:  Bundle(for: self.classForCoder), _configSection: self.sectionsData[key]!, _cardDetail: self.cardDetail)
             section.cardDelegate = self;
             sections.append(section);
             
@@ -184,7 +183,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
     }
     
     func shareOptions() {
-        self.restSDKDelegate?.shareOptions(withcardId: self.cardDetailResponse.cardId)
+        self.restSDKDelegate?.shareOptions(withcardId: self.cardDetail.cardId)
     }
     
 }
