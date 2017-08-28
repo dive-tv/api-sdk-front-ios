@@ -19,13 +19,14 @@ private typealias completionBlockGetCard = (CardDetailResponse)->Void;
 
 class BaseCardDetailBuilder : NSObject{
     
-    internal var styleConfig : JSON?;
+    internal var sdkConfiguration : ConfigSDK?;
     internal var dictSections = [String : ConfigSection]();
     internal var mainKeySection : String?;
     internal var configJSON = [String : String]();
     private weak var restSDKFrontDelegate : RestSDKFrontDelegate?;
     private var relations : [RelationModule]?;
     private var bundle : Bundle
+    private var completion: (Section?) -> Void
     
     fileprivate var moduleValidator : ModuleValidator!;
     
@@ -39,12 +40,14 @@ class BaseCardDetailBuilder : NSObject{
      
      - returns: self
      */
-    init(styleConfig : JSON? = nil, restSDKDelegate : RestSDKFrontDelegate, bundle : Bundle, relations : [RelationModule]? = nil){
+    init(sdkConfiguration : ConfigSDK? = nil, restSDKDelegate : RestSDKFrontDelegate, bundle : Bundle, relations : [RelationModule]? = nil, completion: @escaping (Section?) -> Void){
         
         self.bundle = bundle
+        self.completion = completion
         
         super.init();
-        self.styleConfig = styleConfig;
+        
+        self.sdkConfiguration = sdkConfiguration;
         self.restSDKFrontDelegate = restSDKDelegate;
         self.relations = relations;
         self.moduleValidator = ModuleValidator();
@@ -58,15 +61,16 @@ class BaseCardDetailBuilder : NSObject{
      - parameter cardId:   The cardId to get the information of the card
      - parameter navigationController: The navigation controller of the user.
      */
-    open func build(_ cardId : String, navigationController : UINavigationController, customJSON : String? = nil){
+    open func build(_ cardId : String, customJSON : String? = nil){
         
         ToolsUtils.adminNativeLoadingIn(show: true, backgroundColor: UIColor.diveDarkGreyColor());
+        var section : Section?
         
-         // MARK: - DiveApi get card detail method
+        // MARK: - DiveApi get card detail method
         DiveAPI.getCardsWithRequestBuilder(relations: .all, cardId: cardId,_completion: { _response , _error in
             
             ToolsUtils.adminNativeLoadingIn(show: false, backgroundColor: UIColor.diveDarkGreyColor());
-           
+            
             if (_response?.body != nil) {
                 
                 if let json = self.getJSON(type: (_response?.body?.type.rawValue)!, customJSON: customJSON){
@@ -85,7 +89,11 @@ class BaseCardDetailBuilder : NSObject{
                         }
                         
                     }
-                    CardDetailRender(_sectionsData: validSections, _mainSectionKey: self.mainKeySection, _cardDetail: (_response?.body)!, _navigationController: navigationController, restSDKDelegate: self.restSDKFrontDelegate)
+                    
+                    if (validSections[self.mainKeySection!] != nil) {
+                        section = CardDetailRender(_sectionsData: validSections, _mainSectionKey: self.mainKeySection, _cardDetail: (_response?.body)!, restSDKDelegate: self.restSDKFrontDelegate, sdkConfiguration: self.sdkConfiguration).createSection(self.mainKeySection!)
+                    }
+                    
                 } else {
                     
                     //JSON TYPE DONT FIND
@@ -94,35 +102,38 @@ class BaseCardDetailBuilder : NSObject{
                 // CALLING ERROR
             }
             
-
+            self.completion(section)
+            
         })
-         // MARK: - Old get card detail method
+        // MARK: - Old get card detail method
         
-//        self.getCardDetail(cardId) { (cardData : CardDetail) in
-//            
-//            
-//            if let json = self.getJSON(type: cardData.type.rawValue, customJSON: customJSON){
-//                
-//                self.loadDataType(json);
-//                self.validateSectionsAndModules(cardData);
-//                
-//                var validSections = [String : ConfigSection]();
-//                for key in self.dictSections.keys{
-//                    let configSection = self.dictSections[key]!;
-//                    if(configSection.isValidSection){
-//                        let newConfigSection = self.createConfigSection(configSection.arrayModules);
-//                        if(newConfigSection.arrayModules.count > 0){
-//                            validSections[key] = newConfigSection;
-//                        }
-//                    }
-//                }
+        //        self.getCardDetail(cardId) { (cardData : CardDetail) in
+        //
+        //
+        //            if let json = self.getJSON(type: cardData.type.rawValue, customJSON: customJSON){
+        //
+        //                self.loadDataType(json);
+        //                self.validateSectionsAndModules(cardData);
+        //
+        //                var validSections = [String : ConfigSection]();
+        //                for key in self.dictSections.keys{
+        //                    let configSection = self.dictSections[key]!;
+        //                    if(configSection.isValidSection){
+        //                        let newConfigSection = self.createConfigSection(configSection.arrayModules);
+        //                        if(newConfigSection.arrayModules.count > 0){
+        //                            validSections[key] = newConfigSection;
+        //                        }
+        //                    }
+        //                }
         
-                // TODO: need to do the logic
-//                CardDetailRender(_sectionsData: validSections, _mainSectionKey: self.mainKeySection!, _cardDetail: cardData, _navigationController: navigationController, restSDKDelegate: self.restSDKFrontDelegate);
-//            }
-//
-//        }
+        // TODO: need to do the logic
+        //                CardDetailRender(_sectionsData: validSections, _mainSectionKey: self.mainKeySection!, _cardDetail: cardData, _navigationController: navigationController, restSDKDelegate: self.restSDKFrontDelegate);
+        //            }
+        //
+        //        }
     }
+    
+    
     
     // MARK: Private Methods
     /**

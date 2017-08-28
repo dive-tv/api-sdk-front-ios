@@ -12,13 +12,13 @@ import DiveApi
 public class APISDKFront: NSObject {
     
     
-    public class func pushCardDetail (withCardId cardId: String, withRestDelegate delegate: RestSDKFrontDelegate, inNavigationController navigationController: UINavigationController, bundle : Bundle) {
+    public class func createCardDetail (withCardId cardId: String, withRestDelegate delegate: RestSDKFrontDelegate, bundle : Bundle, withConfiguration configuration: ConfigSDK? = nil, completion: @escaping (Section?) -> Void) {
         if let path = bundle.path(forResource: "config_type", ofType: "json") {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
                 let json = JSON(data: data);
                 if(json != nil && json.error == nil) {
-                    let cardDetailJSON = CardDetailJson(styleConfig: nil, restSDKDelegate : delegate, bundle: bundle);
-                    cardDetailJSON.loadDataConfig(json).build(cardId, navigationController: navigationController);
+                    let cardDetailJSON = CardDetailJson(sdkConfiguration: configuration, restSDKDelegate : delegate, bundle: bundle, completion: completion);
+                    cardDetailJSON.loadDataConfig(json).build(cardId);
                 }
             }
         } else {

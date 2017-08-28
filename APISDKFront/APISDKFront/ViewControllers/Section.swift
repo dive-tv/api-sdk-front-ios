@@ -18,13 +18,14 @@ protocol SectionDelegate : class {
     func updateIndexPathAnalytics(indexPath : IndexPath, indexPathsAnalytics : [IndexPath]);
 }
 
-class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
+open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate var configSection : ConfigSection!;
     fileprivate var cardDetail : CardDetailResponse!
     var cardDelegate : CardDetailDelegate?;
+    private var sdkConfiguration: ConfigSDK
     var isMain = false;
     
     private var controller : UIViewController?;
@@ -35,20 +36,25 @@ class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UIC
     
     private var finishReload = true;
     
-    override var childViewControllerForStatusBarStyle: UIViewController?{
+    override open var childViewControllerForStatusBarStyle: UIViewController?{
         return self.controller;
     }
     
     //MARK: INIT
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, _configSection : ConfigSection, _cardDetail : CardDetailResponse) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, _configSection : ConfigSection, _cardDetail : CardDetailResponse, sdkConfiguration : ConfigSDK) {
+        
+        self.sdkConfiguration = sdkConfiguration
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
         self.configSection = _configSection
         self.cardDetail = _cardDetail
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
+        
+        self.sdkConfiguration = ConfigSDK()
+        
         super.init(coder: aDecoder);
     }
     
@@ -62,11 +68,16 @@ class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UIC
     /**
      Configures tableView and register tableViewCells
      */
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         
         self.view.backgroundColor = UIColor.white;
         self.collectionView.backgroundColor = UIColor.white;
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "nativeCell")
+        
+        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = self.sdkConfiguration.scrollDirection
+            self.collectionView.collectionViewLayout = layout
+        }
         
         if(self.isMain){
             
@@ -85,7 +96,7 @@ class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UIC
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         self.indexPathsAnalytics.removeAll();
@@ -168,17 +179,17 @@ class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UIC
     
     // MARK: UICollectionViewDataSource
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.configSection.arrayModules.count
     }
     
     
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.configSection.arrayModules[indexPath.row].moduleName!, for: indexPath) as! SDKFrontModule;
         cell.sectionDelegate = self;
@@ -191,9 +202,17 @@ class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UIC
     
     //MARK: UICollectionViewDelegateFlowLayout
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 50, height: 50)
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+            
+            let height = (collectionView.bounds.width * 168) / 200
+            let width = (collectionView.bounds.height * 200) / 168
+            
+            return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: height) : CGSize(width: width, height: collectionView.bounds.height)
+        }
+        
+        return CGSize.zero
     }
     
     
@@ -229,7 +248,7 @@ class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UIC
     }
     
     // MARK: ScrollViewDelegate
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if(self.finishReload){
             self.checkVisibleCells();
         }

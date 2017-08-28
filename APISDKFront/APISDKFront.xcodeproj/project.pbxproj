@@ -29,6 +29,9 @@
 		323600241F502D22000CED94 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323600181F502D22000CED94 /* Utils.swift */; };
 		323600261F502DE6000CED94 /* APISDKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323600251F502DE6000CED94 /* APISDKExtensions.swift */; };
 		326DFC481F4EF8C9004E08BC /* DiveApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326DFC471F4EF8C9004E08BC /* DiveApi.framework */; };
+		3273E8D51F5053BD006D8F9D /* MovieHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273E8D31F5053BD006D8F9D /* MovieHeader.swift */; };
+		3273E8D61F5053BD006D8F9D /* MovieHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3273E8D41F5053BD006D8F9D /* MovieHeader.xib */; };
+		32D65FF41F54035C0048A002 /* ConfigSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D65FF31F54035B0048A002 /* ConfigSDK.swift */; };
 		32D71ADF1F4ED7D9000992B5 /* APISDKFront.h in Headers */ = {isa = PBXBuildFile; fileRef = 32D71ADD1F4ED7D9000992B5 /* APISDKFront.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32D71B1C1F4ED7F4000992B5 /* BaseCardDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AE61F4ED7F4000992B5 /* BaseCardDetailBuilder.swift */; };
 		32D71B1D1F4ED7F4000992B5 /* CardDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AE71F4ED7F4000992B5 /* CardDetailBuilder.swift */; };
@@ -38,15 +41,9 @@
 		32D71B241F4ED7F4000992B5 /* CardDetailErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AEF1F4ED7F4000992B5 /* CardDetailErrors.swift */; };
 		32D71B271F4ED7F4000992B5 /* ConfigModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF21F4ED7F4000992B5 /* ConfigModule.swift */; };
 		32D71B281F4ED7F4000992B5 /* ConfigSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF31F4ED7F4000992B5 /* ConfigSection.swift */; };
-		32D71B2A1F4ED7F4000992B5 /* ContainerContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF51F4ED7F4000992B5 /* ContainerContentType.swift */; };
-		32D71B2C1F4ED7F4000992B5 /* ContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF71F4ED7F4000992B5 /* ContainerType.swift */; };
 		32D71B2D1F4ED7F4000992B5 /* DataModelErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AF81F4ED7F4000992B5 /* DataModelErrors.swift */; };
 		32D71B2F1F4ED7F4000992B5 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71AFA1F4ED7F4000992B5 /* ErrorManager.swift */; };
-		32D71B381F4ED7F4000992B5 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B031F4ED7F4000992B5 /* ProductCategory.swift */; };
-		32D71B3B1F4ED7F4000992B5 /* RelationContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B061F4ED7F4000992B5 /* RelationContentType.swift */; };
-		32D71B3D1F4ED7F4000992B5 /* RelationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B081F4ED7F4000992B5 /* RelationType.swift */; };
 		32D71B421F4ED7F4000992B5 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B0D1F4ED7F4000992B5 /* Target.swift */; };
-		32D71B471F4ED7F4000992B5 /* TypeOfCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B121F4ED7F4000992B5 /* TypeOfCard.swift */; };
 		32D71B491F4ED7F4000992B5 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B141F4ED7F4000992B5 /* Validatable.swift */; };
 		32D71B4A1F4ED7F4000992B5 /* SDKFrontModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B161F4ED7F4000992B5 /* SDKFrontModule.swift */; };
 		32D71B4C1F4ED7F4000992B5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D71B1A1F4ED7F4000992B5 /* Section.swift */; };
@@ -86,6 +83,9 @@
 		326DFC491F4EF8D0004E08BC /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Analytics.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/Analytics/Analytics.framework"; sourceTree = "<group>"; };
 		326DFC4B1F4EF8D7004E08BC /* ToolsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToolsiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/ToolsiOS.framework"; sourceTree = "<group>"; };
 		326DFC4D1F4EF969004E08BC /* AnalyticsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnalyticsiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/AnalyticsiOS.framework"; sourceTree = "<group>"; };
+		3273E8D31F5053BD006D8F9D /* MovieHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHeader.swift; sourceTree = "<group>"; };
+		3273E8D41F5053BD006D8F9D /* MovieHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieHeader.xib; sourceTree = "<group>"; };
+		32D65FF31F54035B0048A002 /* ConfigSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSDK.swift; sourceTree = "<group>"; };
 		32D71ADA1F4ED7D9000992B5 /* APISDKFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APISDKFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D71ADD1F4ED7D9000992B5 /* APISDKFront.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APISDKFront.h; sourceTree = "<group>"; };
 		32D71ADE1F4ED7D9000992B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,15 +97,9 @@
 		32D71AEF1F4ED7F4000992B5 /* CardDetailErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailErrors.swift; sourceTree = "<group>"; };
 		32D71AF21F4ED7F4000992B5 /* ConfigModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigModule.swift; sourceTree = "<group>"; };
 		32D71AF31F4ED7F4000992B5 /* ConfigSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigSection.swift; sourceTree = "<group>"; };
-		32D71AF51F4ED7F4000992B5 /* ContainerContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerContentType.swift; sourceTree = "<group>"; };
-		32D71AF71F4ED7F4000992B5 /* ContainerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerType.swift; sourceTree = "<group>"; };
 		32D71AF81F4ED7F4000992B5 /* DataModelErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelErrors.swift; sourceTree = "<group>"; };
 		32D71AFA1F4ED7F4000992B5 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
-		32D71B031F4ED7F4000992B5 /* ProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
-		32D71B061F4ED7F4000992B5 /* RelationContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationContentType.swift; sourceTree = "<group>"; };
-		32D71B081F4ED7F4000992B5 /* RelationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationType.swift; sourceTree = "<group>"; };
 		32D71B0D1F4ED7F4000992B5 /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		32D71B121F4ED7F4000992B5 /* TypeOfCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeOfCard.swift; sourceTree = "<group>"; };
 		32D71B141F4ED7F4000992B5 /* Validatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validatable.swift; sourceTree = "<group>"; };
 		32D71B161F4ED7F4000992B5 /* SDKFrontModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKFrontModule.swift; sourceTree = "<group>"; };
 		32D71B1A1F4ED7F4000992B5 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -267,16 +261,11 @@
 				32D71AEF1F4ED7F4000992B5 /* CardDetailErrors.swift */,
 				32D71AF21F4ED7F4000992B5 /* ConfigModule.swift */,
 				32D71AF31F4ED7F4000992B5 /* ConfigSection.swift */,
-				32D71AF51F4ED7F4000992B5 /* ContainerContentType.swift */,
-				32D71AF71F4ED7F4000992B5 /* ContainerType.swift */,
 				32D71AF81F4ED7F4000992B5 /* DataModelErrors.swift */,
 				32D71AFA1F4ED7F4000992B5 /* ErrorManager.swift */,
-				32D71B031F4ED7F4000992B5 /* ProductCategory.swift */,
-				32D71B061F4ED7F4000992B5 /* RelationContentType.swift */,
-				32D71B081F4ED7F4000992B5 /* RelationType.swift */,
 				32D71B0D1F4ED7F4000992B5 /* Target.swift */,
-				32D71B121F4ED7F4000992B5 /* TypeOfCard.swift */,
 				32D71B141F4ED7F4000992B5 /* Validatable.swift */,
+				32D65FF31F54035B0048A002 /* ConfigSDK.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -285,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				32D71B161F4ED7F4000992B5 /* SDKFrontModule.swift */,
+				3273E8D31F5053BD006D8F9D /* MovieHeader.swift */,
+				3273E8D41F5053BD006D8F9D /* MovieHeader.xib */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -394,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D71B4D1F4ED7F4000992B5 /* Section.xib in Resources */,
+				3273E8D61F5053BD006D8F9D /* MovieHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +434,7 @@
 			files = (
 				32D71B2D1F4ED7F4000992B5 /* DataModelErrors.swift in Sources */,
 				32D71B281F4ED7F4000992B5 /* ConfigSection.swift in Sources */,
-				32D71B381F4ED7F4000992B5 /* ProductCategory.swift in Sources */,
-				32D71B2A1F4ED7F4000992B5 /* ContainerContentType.swift in Sources */,
+				32D65FF41F54035C0048A002 /* ConfigSDK.swift in Sources */,
 				3236001B1F502D22000CED94 /* ToolsExtensions.swift in Sources */,
 				323600031F502D15000CED94 /* Constant.swift in Sources */,
 				32D71B491F4ED7F4000992B5 /* Validatable.swift in Sources */,
@@ -451,18 +442,15 @@
 				3236001C1F502D22000CED94 /* Measure.swift in Sources */,
 				32D71B201F4ED7F4000992B5 /* ModuleValidator.swift in Sources */,
 				32D71B1D1F4ED7F4000992B5 /* CardDetailBuilder.swift in Sources */,
-				32D71B2C1F4ED7F4000992B5 /* ContainerType.swift in Sources */,
 				323600021F502D15000CED94 /* DiveAuthenticatedIdentityProvider.swift in Sources */,
 				32D71B241F4ED7F4000992B5 /* CardDetailErrors.swift in Sources */,
-				32D71B3B1F4ED7F4000992B5 /* RelationContentType.swift in Sources */,
 				32D71B271F4ED7F4000992B5 /* ConfigModule.swift in Sources */,
 				32D71B421F4ED7F4000992B5 /* Target.swift in Sources */,
 				323600261F502DE6000CED94 /* APISDKExtensions.swift in Sources */,
 				3236001E1F502D22000CED94 /* MZSelectableLabel.m in Sources */,
 				323600051F502D15000CED94 /* SEGAppsFlyerIntegration.m in Sources */,
 				32D71B1C1F4ED7F4000992B5 /* BaseCardDetailBuilder.swift in Sources */,
-				32D71B471F4ED7F4000992B5 /* TypeOfCard.swift in Sources */,
-				32D71B3D1F4ED7F4000992B5 /* RelationType.swift in Sources */,
+				3273E8D51F5053BD006D8F9D /* MovieHeader.swift in Sources */,
 				32D71B4A1F4ED7F4000992B5 /* SDKFrontModule.swift in Sources */,
 				323600191F502D22000CED94 /* AnchorImage.swift in Sources */,
 				32D71B1F1F4ED7F4000992B5 /* CardDetailRender.swift in Sources */,
