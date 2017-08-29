@@ -36,7 +36,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
     fileprivate var sectionsData : [String:ConfigSection]!;
     fileprivate var mainSectionKey : String!;
     fileprivate var cardDetail: CardDetailResponse!
-    private var sdkConfiguration = ConfigSDK()
+    private var sdkConfiguration = ConfigurationAPISDK()
     
     private weak var restSDKDelegate : RestSDKFrontDelegate?;
     
@@ -44,7 +44,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
     //MARK: INIT
     
     
-    init(_sectionsData : [String:ConfigSection], _mainSectionKey : String!, _cardDetail : CardDetailResponse, restSDKDelegate : RestSDKFrontDelegate?, sdkConfiguration: ConfigSDK? = nil) {
+    init(_sectionsData : [String:ConfigSection], _mainSectionKey : String!, _cardDetail : CardDetailResponse, restSDKDelegate : RestSDKFrontDelegate?, sdkConfiguration: ConfigurationAPISDK? = nil) {
         
         super.init()
         self.sectionsData = _sectionsData;
@@ -54,6 +54,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
         
         if (sdkConfiguration != nil) {
             self.sdkConfiguration = sdkConfiguration!
+            self.setConfiguration()
         }
 
     }
@@ -62,7 +63,20 @@ class CardDetailRender : NSObject, CardDetailDelegate {
         print("CardDetail destroid")
     }
     
-    
+    private func setConfiguration () {
+        
+        SDKConfiguration.backgroundColor = self.sdkConfiguration.backgroundColor
+        SDKConfiguration.titleColor = self.sdkConfiguration.titleColor
+        SDKConfiguration.cliclableColor = self.sdkConfiguration.cliclableColor
+        SDKConfiguration.secondaryColor = self.sdkConfiguration.secondaryColor
+        SDKConfiguration.buttonLabelColor = self.sdkConfiguration.buttonLabelColor
+        SDKConfiguration.buttonBackgroundColor = self.sdkConfiguration.buttonBackgroundColor
+        SDKConfiguration.modulesBackgroundColor = self.sdkConfiguration.modulesBackgroundColor
+        
+        SDKConfiguration.buttonFont = self.sdkConfiguration.buttonFont
+        SDKConfiguration.primaryFont = self.sdkConfiguration.primaryFont
+        SDKConfiguration.secondaryFont = self.sdkConfiguration.secondaryFont
+    }
     
     
     //MARK: Card detail delegate

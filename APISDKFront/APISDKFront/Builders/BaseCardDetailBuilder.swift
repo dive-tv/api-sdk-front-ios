@@ -19,7 +19,7 @@ private typealias completionBlockGetCard = (CardDetailResponse)->Void;
 
 class BaseCardDetailBuilder : NSObject{
     
-    internal var sdkConfiguration : ConfigSDK?;
+    internal var sdkConfiguration : ConfigurationAPISDK?;
     internal var dictSections = [String : ConfigSection]();
     internal var mainKeySection : String?;
     internal var configJSON = [String : String]();
@@ -40,7 +40,7 @@ class BaseCardDetailBuilder : NSObject{
      
      - returns: self
      */
-    init(sdkConfiguration : ConfigSDK? = nil, restSDKDelegate : RestSDKFrontDelegate, bundle : Bundle, relations : [RelationModule]? = nil, completion: @escaping (Section?) -> Void){
+    init(sdkConfiguration : ConfigurationAPISDK? = nil, restSDKDelegate : RestSDKFrontDelegate, bundle : Bundle, relations : [RelationModule]? = nil, completion: @escaping (Section?) -> Void){
         
         self.bundle = bundle
         self.completion = completion
@@ -63,13 +63,13 @@ class BaseCardDetailBuilder : NSObject{
      */
     open func build(_ cardId : String, customJSON : String? = nil){
         
-        ToolsUtils.adminNativeLoadingIn(show: true, backgroundColor: UIColor.diveDarkGreyColor());
+        ToolsUtils.adminNativeLoadingIn(show: true, backgroundColor: .black);
         var section : Section?
         
         // MARK: - DiveApi get card detail method
         DiveAPI.getCardsWithRequestBuilder(relations: .all, cardId: cardId,_completion: { _response , _error in
             
-            ToolsUtils.adminNativeLoadingIn(show: false, backgroundColor: UIColor.diveDarkGreyColor());
+            ToolsUtils.adminNativeLoadingIn(show: false, backgroundColor: .black);
             
             if (_response?.body != nil) {
                 

@@ -7,63 +7,23 @@
 //
 
 
-//MARK: UIColor
-
-
-
-extension UIColor {
+class SDKConfiguration {
     
-    class func diveOffYellowColor() -> UIColor {
-        return UIColor(red: 247.0 / 255.0, green: 215.0 / 255.0, blue: 59.0 / 255.0, alpha: 1.0)
-    }
+    static var backgroundColor: UIColor = .black
+    static var modulesBackgroundColor: UIColor = .white
     
-    class func diveWhiteColor() -> UIColor {
-        return UIColor(white: 255.0 / 255.0, alpha: 1.0)
-    }
+    static var titleColor: UIColor = .red
+    static var secondaryColor: UIColor = .blue
+    static var cliclableColor: UIColor = .yellow
     
-    class func diveSeafoamBlueColor() -> UIColor {
-        return UIColor(red: 93.0 / 255.0, green: 196.0 / 255.0, blue: 182.0 / 255.0, alpha: 1.0)
-    }
+    static var buttonLabelColor: UIColor = .brown
+    static var buttonBackgroundColor: UIColor = .yellow
     
-    class func diveDarkGreyTwoColor() -> UIColor {
-        return UIColor(red: 49.0 / 255.0, green: 50.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
-    }
+    static var primaryFont: UIFont = UIFont.systemFont(ofSize: 12)
+    static var secondaryFont: UIFont = UIFont.systemFont(ofSize: 10)
+    static var buttonFont: UIFont = UIFont.systemFont(ofSize: 9)
     
-    class func diveWarmGreyColor(alpha : CGFloat? = nil) -> UIColor {
-        return UIColor(white: 144.0 / 255.0, alpha: alpha != nil ? alpha! : 1.0);
-    }
-    
-    class func divePaleGreyColor() -> UIColor {
-        return UIColor(red: 232.0 / 255.0, green: 234.0 / 255.0, blue: 238.0 / 255.0, alpha: 1.0)
-    }
-    
-    class func divePaleGreyTwoColor() -> UIColor {
-        return UIColor(red: 244.0 / 255.0, green: 246.0 / 255.0, blue: 249.0 / 255.0, alpha: 1.0)
-    }
-    
-    class func diveTealGreenColor() -> UIColor {
-        return UIColor(red: 39.0 / 255.0, green: 155.0 / 255.0, blue: 139.0 / 255.0, alpha: 1.0)
-    }
-    
-    class func diveTealGreenColorTwo() -> UIColor {
-        return UIColor(red: 38.0 / 255.0, green: 155.0 / 255.0, blue: 139.0 / 255.0, alpha: 1.0)
-    }
-    
-    class func diveDarkGreyColor(alpha : CGFloat? = nil) -> UIColor {
-        return UIColor(red: 28.0 / 255.0, green: 29.0 / 255.0, blue: 29.0 / 255.0, alpha: alpha != nil ? alpha! : 1.0)
-    }
-    
-    class func diveBlackColor(alpha : CGFloat? = nil) -> UIColor {
-        return UIColor(white: 38.0 / 255.0, alpha: alpha != nil ? alpha! : 1.0)
-    }
-    
-    class func diveBlackTwoColor() -> UIColor{
-        return UIColor(red: 14 / 255.0, green: 14 / 255.0, blue: 14 / 255.0, alpha: 1.0)
-    }
-    
-    class func diveBlackShadow(alpha : CGFloat? = nil) -> UIColor {
-        return UIColor(red: 14 / 255.0, green: 14 / 255.0, blue: 14 / 255.0, alpha: 0.3)
-    }
+    static var pocketSave: Bool = false
 }
 
 

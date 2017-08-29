@@ -12,7 +12,7 @@ import DiveApi
 public class APISDKFront: NSObject {
     
     
-    public class func createCardDetail (withCardId cardId: String, withRestDelegate delegate: RestSDKFrontDelegate, bundle : Bundle, withConfiguration configuration: ConfigSDK? = nil, completion: @escaping (Section?) -> Void) {
+    public class func createCardDetail (withCardId cardId: String, withRestDelegate delegate: RestSDKFrontDelegate, bundle : Bundle, withConfiguration configuration: ConfigurationAPISDK? = nil, completion: @escaping (Section?) -> Void) {
         if let path = bundle.path(forResource: "config_type", ofType: "json") {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
                 let json = JSON(data: data);

@@ -25,7 +25,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     fileprivate var configSection : ConfigSection!;
     fileprivate var cardDetail : CardDetailResponse!
     var cardDelegate : CardDetailDelegate?;
-    private var sdkConfiguration: ConfigSDK
+    private var sdkConfiguration: ConfigurationAPISDK
     var isMain = false;
     
     private var controller : UIViewController?;
@@ -42,7 +42,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     
     //MARK: INIT
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, _configSection : ConfigSection, _cardDetail : CardDetailResponse, sdkConfiguration : ConfigSDK) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, _configSection : ConfigSection, _cardDetail : CardDetailResponse, sdkConfiguration : ConfigurationAPISDK) {
         
         self.sdkConfiguration = sdkConfiguration
         
@@ -53,13 +53,19 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     
     required public init?(coder aDecoder: NSCoder) {
         
-        self.sdkConfiguration = ConfigSDK()
+        self.sdkConfiguration = ConfigurationAPISDK()
         
         super.init(coder: aDecoder);
     }
     
     deinit {
         print("Section destroid ------->")
+    }
+    
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+     
+        self.collectionView.reloadData()
     }
     
     //MARK: UIViewController methods
@@ -73,8 +79,11 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         self.view.backgroundColor = UIColor.white;
         self.collectionView.backgroundColor = UIColor.white;
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "nativeCell")
+        self.collectionView.backgroundColor = SDKConfiguration.backgroundColor
         
         if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            self.collectionView.alwaysBounceVertical = self.sdkConfiguration.scrollDirection == .vertical ? true : false
+            self.collectionView.alwaysBounceHorizontal = self.sdkConfiguration.scrollDirection == .horizontal ? true : false
             layout.scrollDirection = self.sdkConfiguration.scrollDirection
             self.collectionView.collectionViewLayout = layout
         }
@@ -194,9 +203,13 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.configSection.arrayModules[indexPath.row].moduleName!, for: indexPath) as! SDKFrontModule;
         cell.sectionDelegate = self;
         cell.cardDelegate = self.cardDelegate;
+        cell.backgroundColor = .clear
+        cell.backgroundView?.backgroundColor = .clear
         //cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
         
         cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row], _cardDetail: self.cardDetail);
+        cell.layoutSubviews()
+        cell.layoutIfNeeded()
         return cell;
     }
     
@@ -206,8 +219,8 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             
-            let height = (collectionView.bounds.width * 168) / 200
-            let width = (collectionView.bounds.height * 200) / 168
+            let height = (collectionView.bounds.width * 170) / 250
+            let width = (collectionView.bounds.height * 250) / 170
             
             return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: height) : CGSize(width: width, height: collectionView.bounds.height)
         }
@@ -222,10 +235,10 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         self.cardDetail.user?.isLiked = self.cardDetail.user?.isLiked != nil ? !self.cardDetail.user!.isLiked! : false
         
         let like = UIBarButtonItem(image: (self.cardDetail.user?.isLiked)! ? #imageLiteral(resourceName: "ico_like_active") : #imageLiteral(resourceName: "ico_like"), style: .plain, target: self, action: #selector(Section.saveCard));
-        like.tintColor = UIColor.diveWarmGreyColor();
+        //like.tintColor = UIColor.diveWarmGreyColor();
         
         let more = UIBarButtonItem(image: #imageLiteral(resourceName: "ico_more"), style: .plain, target: self, action: #selector(Section.openOptions));
-        more.tintColor = UIColor.diveWarmGreyColor();
+        //more.tintColor = UIColor.diveWarmGreyColor();
         
         self.navigationItem.rightBarButtonItems = [more, like];
         
