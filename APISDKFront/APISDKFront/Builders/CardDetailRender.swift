@@ -29,48 +29,24 @@ class CardDetailRender : NSObject, RenderCardDetailDelegate {
     fileprivate var sectionsData : [String:ConfigSection]!;
     fileprivate var mainSectionKey : String!;
     fileprivate var cardDetail: CardDetailResponse!
-    private var sdkConfiguration = ConfigurationAPISDK()
-    
+
     private weak var apiSDKDelegate : APISDKDelegate?;
     
     
     //MARK: INIT
     
     
-    init(_sectionsData : [String:ConfigSection], _mainSectionKey : String!, _cardDetail : CardDetailResponse, restSDKDelegate : APISDKDelegate?, sdkConfiguration: ConfigurationAPISDK? = nil) {
+    init(_sectionsData : [String:ConfigSection], _mainSectionKey : String!, _cardDetail : CardDetailResponse, restSDKDelegate : APISDKDelegate?) {
         
         super.init()
         self.sectionsData = _sectionsData;
         self.mainSectionKey = _mainSectionKey;
         self.cardDetail = _cardDetail
         self.apiSDKDelegate = restSDKDelegate;
-        
-        if (sdkConfiguration != nil) {
-            self.sdkConfiguration = sdkConfiguration!
-            self.setConfiguration()
-        }
-
     }
     
     deinit {
         print("CardDetail destroid")
-    }
-    
-    private func setConfiguration () {
-        
-        SDKConfiguration.backgroundColor = self.sdkConfiguration.backgroundColor
-        SDKConfiguration.titleColor = self.sdkConfiguration.titleColor
-        SDKConfiguration.cliclableColor = self.sdkConfiguration.cliclableColor
-        SDKConfiguration.secondaryColor = self.sdkConfiguration.secondaryColor
-        SDKConfiguration.buttonLabelColor = self.sdkConfiguration.buttonLabelColor
-        SDKConfiguration.buttonBackgroundColor = self.sdkConfiguration.buttonBackgroundColor
-        SDKConfiguration.modulesBackgroundColor = self.sdkConfiguration.modulesBackgroundColor
-        
-        SDKConfiguration.buttonFont = self.sdkConfiguration.buttonFont
-        SDKConfiguration.primaryFont = self.sdkConfiguration.primaryFont
-        SDKConfiguration.secondaryFont = self.sdkConfiguration.secondaryFont
-        
-        SDKConfiguration.pocketSave = self.sdkConfiguration.pocketSave
     }
     
     
@@ -85,7 +61,7 @@ class CardDetailRender : NSObject, RenderCardDetailDelegate {
      - returns: the section created with the delegate assigned
      */
     func createSection (_ _keyForSection : String) -> Section {
-        let section = Section(nibName: "Section", bundle: Bundle(for: self.classForCoder), _configSection: self.sectionsData[_keyForSection]!, _cardDetail: self.cardDetail, sdkConfiguration: self.sdkConfiguration)
+        let section = Section(nibName: "Section", bundle: Bundle(for: self.classForCoder), _configSection: self.sectionsData[_keyForSection]!, _cardDetail: self.cardDetail)
         section.cardDelegate = self;
         return section;
     }
@@ -103,7 +79,7 @@ class CardDetailRender : NSObject, RenderCardDetailDelegate {
         var sections = [Section]()
         
         for key in _keyForSections {
-            let section = Section(nibName: "Section", bundle:  Bundle(for: self.classForCoder), _configSection: self.sectionsData[key]!, _cardDetail: self.cardDetail, sdkConfiguration: self.sdkConfiguration)
+            let section = Section(nibName: "Section", bundle:  Bundle(for: self.classForCoder), _configSection: self.sectionsData[key]!, _cardDetail: self.cardDetail)
             section.cardDelegate = self;
             sections.append(section);
             

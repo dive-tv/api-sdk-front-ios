@@ -20,12 +20,12 @@ protocol SectionDelegate : class {
 
 open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak private var collectionView: UICollectionView!
     
     fileprivate var configSection : ConfigSection!;
     fileprivate var cardDetail : CardDetailResponse!
     var cardDelegate : RenderCardDetailDelegate?;
-    private var sdkConfiguration: ConfigurationAPISDK
+    
     var isMain = false;
     
     private var controller : UIViewController?;
@@ -42,19 +42,14 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     
     //MARK: INIT
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, _configSection : ConfigSection, _cardDetail : CardDetailResponse, sdkConfiguration : ConfigurationAPISDK) {
-        
-        self.sdkConfiguration = sdkConfiguration
-        
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, _configSection : ConfigSection, _cardDetail : CardDetailResponse) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
+        
         self.configSection = _configSection
         self.cardDetail = _cardDetail
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        
-        self.sdkConfiguration = ConfigurationAPISDK()
-        
         super.init(coder: aDecoder);
     }
     
@@ -83,12 +78,12 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         self.view.backgroundColor = UIColor.white;
         self.collectionView.backgroundColor = UIColor.white;
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "nativeCell")
-        self.collectionView.backgroundColor = SDKConfiguration.backgroundColor
+        self.collectionView.backgroundColor = ApiSDKConfiguration.backgroundColor
         
         if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            self.collectionView.alwaysBounceVertical = self.sdkConfiguration.scrollDirection == .vertical ? true : false
-            self.collectionView.alwaysBounceHorizontal = self.sdkConfiguration.scrollDirection == .horizontal ? true : false
-            layout.scrollDirection = self.sdkConfiguration.scrollDirection
+            self.collectionView.alwaysBounceVertical = ApiSDKConfiguration.scrollDirection == .vertical ? true : false
+            self.collectionView.alwaysBounceHorizontal = ApiSDKConfiguration.scrollDirection == .horizontal ? true : false
+            layout.scrollDirection = ApiSDKConfiguration.scrollDirection
             self.collectionView.collectionViewLayout = layout
         }
         
@@ -120,6 +115,20 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         }
         
         //self.tableView.setContentOffset(self.tableView.contentOffset, animated: false);
+    }
+    
+    
+    public func changeConfiguration () {
+        self.collectionView.backgroundColor = ApiSDKConfiguration.backgroundColor
+        
+        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            self.collectionView.alwaysBounceVertical = ApiSDKConfiguration.scrollDirection == .vertical ? true : false
+            self.collectionView.alwaysBounceHorizontal = ApiSDKConfiguration.scrollDirection == .horizontal ? true : false
+            layout.scrollDirection = ApiSDKConfiguration.scrollDirection
+            self.collectionView.collectionViewLayout = layout
+        }
+        
+        self.collectionView.reloadData()
     }
     
     
@@ -268,7 +277,6 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         if(self.finishReload){
             self.checkVisibleCells();
         }
-        
     }
     
 }

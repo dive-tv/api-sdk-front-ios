@@ -47,40 +47,42 @@ class MovieHeader: SDKFrontModule {
         
         self.posterImageview.downloadImage(_url: cardDetail.image?.thumb, viewMode: .scaleAspectFill, bundle: Bundle(for: self.classForCoder))
         
-        self.typeLabel.font = SDKConfiguration.secondaryFont
+        self.typeLabel.font = ApiSDKConfiguration.secondaryFont
         self.typeLabel.text = self.cardDetail.type.rawValue.capitalized
-        self.typeLabel.textColor = SDKConfiguration.titleColor
-        self.typeView.backgroundColor = SDKConfiguration.modulesBackgroundColor
+        self.typeLabel.textColor = ApiSDKConfiguration.titleColor
+        self.typeView.backgroundColor = ApiSDKConfiguration.modulesBackgroundColor
         
         self.titleLabel.text = self.cardDetail.title
-        self.titleLabel.font = SDKConfiguration.primaryFont
-        self.titleLabel.textColor = SDKConfiguration.titleColor
+        self.titleLabel.font = ApiSDKConfiguration.primaryFont
+        self.titleLabel.textColor = ApiSDKConfiguration.titleColor
         
-        self.saveView.isHidden = SDKConfiguration.pocketSave
+        self.saveView.isHidden = ApiSDKConfiguration.pocketSave
         
-        self.saveView.backgroundColor = SDKConfiguration.buttonBackgroundColor
-        self.saveBtnLabel.font = SDKConfiguration.buttonFont
-        self.saveBtnLabel.textColor = SDKConfiguration.buttonLabelColor
-        self.saveBtnLabel.text = ApiSDKUtils.getStringForLocalized(name: "ADD_LIKE_BTN")
+        self.saveView.backgroundColor = ApiSDKConfiguration.buttonBackgroundColor
+        self.saveBtnLabel.font = ApiSDKConfiguration.buttonFont
+        self.saveBtnLabel.textColor = ApiSDKConfiguration.buttonLabelColor
+        self.saveBtnLabel.text = ToolsUtils.getStringForLocalized(name: "ADD_LIKE_BTN")
         
         
         
         if let catalogContainer = self.cardDetail.getContainer(withModelType: .movie) {
          
-            self.directorLabel.font = SDKConfiguration.secondaryFont
-            self.directorLabel.textColor = SDKConfiguration.secondaryColor
+            self.directorLabel.font = ApiSDKConfiguration.secondaryFont
+            self.directorLabel.textColor = ApiSDKConfiguration.secondaryColor
             self.setProducers()
         
-            self.genresLabel.font = SDKConfiguration.secondaryFont
-            self.genresLabel.textColor = SDKConfiguration.cliclableColor
+            self.genresLabel.font = ApiSDKConfiguration.secondaryFont
+            self.genresLabel.textColor = ApiSDKConfiguration.cliclableColor
             self.setGenres(catalogContainer.data[0].genres)
             
-            self.timeLabel.font = SDKConfiguration.secondaryFont
-            self.timeLabel.textColor = SDKConfiguration.secondaryColor
+            self.timeLabel.font = ApiSDKConfiguration.secondaryFont
+            self.timeLabel.textColor = ApiSDKConfiguration.secondaryColor
             self.setDuration(catalogContainer.data.first!.runtime)
         }
     }
     
+    
+    //MARK: Private methods
     
     private func setProducers(){
         self.directorLabel.text = "";
@@ -133,11 +135,11 @@ class MovieHeader: SDKFrontModule {
             let string = genre;
             if(i == genres.count - 1){
                 //text = text + NSLocalizedString(string, comment: "");
-                text = text + NSLocalizedString(string, comment: "");
+                text = text + ToolsUtils.getStringForLocalized(name: string)
             }
             else{
                 //text = text + NSLocalizedString(string, comment: "") + " · ";
-                text = text + NSLocalizedString(string, comment: "") + ", ";
+                text = text + ToolsUtils.getStringForLocalized(name: string) + ", ";
             }
             i += 1;
             
@@ -165,11 +167,11 @@ class MovieHeader: SDKFrontModule {
                     }
                     
                 }
-                self.timeLabel.text = "\(hour)\(NSLocalizedString("HOURS_SHORT", comment: "")) \(stringMinutes)\(NSLocalizedString("MINUTES_SHORT", comment: ""))";
+                self.timeLabel.text = "\(hour)\(ToolsUtils.getStringForLocalized(name: "HOURS_SHORT")) \(stringMinutes)\(ToolsUtils.getStringForLocalized(name: "MINUTES_SHORT"))";
                 
             }
             else{
-                self.timeLabel.text = "\(duration) \(NSLocalizedString("MINUTES_SHORT", comment: ""))";
+                self.timeLabel.text = "\(duration) \(ToolsUtils.getStringForLocalized(name: "MINUTES_SHORT"))";
             }
         }
         else{
@@ -177,6 +179,8 @@ class MovieHeader: SDKFrontModule {
         }
         
     }
+    
+    
     @IBAction func touchSaveBtn(_ sender: UIButton) {
         
     }

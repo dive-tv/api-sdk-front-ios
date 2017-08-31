@@ -22,10 +22,10 @@
 		323600241F502D22000CED94 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323600181F502D22000CED94 /* Utils.swift */; };
 		323600261F502DE6000CED94 /* APISDKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323600251F502DE6000CED94 /* APISDKExtensions.swift */; };
 		3269EF911F57FC5800341A69 /* Sizeable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3269EF901F57FC5800341A69 /* Sizeable.xib */; };
+		3269EFBB1F5836A500341A69 /* ApiSDKConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3269EFBA1F5836A500341A69 /* ApiSDKConfiguration.swift */; };
 		326DFC481F4EF8C9004E08BC /* DiveApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326DFC471F4EF8C9004E08BC /* DiveApi.framework */; };
 		3273E8D51F5053BD006D8F9D /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273E8D31F5053BD006D8F9D /* Sizeable.swift */; };
 		32D00D681F56CCE400018304 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32D00D6A1F56CCE400018304 /* Localizable.strings */; };
-		32D65FF41F54035C0048A002 /* ConfigurationAPISDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D65FF31F54035B0048A002 /* ConfigurationAPISDK.swift */; };
 		32D65FF71F543BEB0048A002 /* MovieHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D65FF51F543BEB0048A002 /* MovieHeader.swift */; };
 		32D65FF81F543BEB0048A002 /* MovieHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D65FF61F543BEB0048A002 /* MovieHeader.xib */; };
 		32D71ADF1F4ED7D9000992B5 /* APISDKFront.h in Headers */ = {isa = PBXBuildFile; fileRef = 32D71ADD1F4ED7D9000992B5 /* APISDKFront.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,6 +69,7 @@
 		323C17DC1F4EDDCB007D2DAF /* DiveApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiveApi.framework; path = "../../dive-rest-ios/DiveApi/build/Debug-iphoneos/DiveApi.framework"; sourceTree = "<group>"; };
 		323C17DE1F4EDDFA007D2DAF /* ToolsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToolsiOS.framework; path = "../../tools_ios/ToolsiOS/build/Debug-iphoneos/ToolsiOS.framework"; sourceTree = "<group>"; };
 		3269EF901F57FC5800341A69 /* Sizeable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Sizeable.xib; sourceTree = "<group>"; };
+		3269EFBA1F5836A500341A69 /* ApiSDKConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSDKConfiguration.swift; sourceTree = "<group>"; };
 		326DFC471F4EF8C9004E08BC /* DiveApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiveApi.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/DiveApi.framework"; sourceTree = "<group>"; };
 		326DFC491F4EF8D0004E08BC /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Analytics.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/Analytics/Analytics.framework"; sourceTree = "<group>"; };
 		326DFC4B1F4EF8D7004E08BC /* ToolsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToolsiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/ToolsiOS.framework"; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		3273E8D31F5053BD006D8F9D /* Sizeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
 		32D00D691F56CCE400018304 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32D00D6B1F56CDC600018304 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		32D65FF31F54035B0048A002 /* ConfigurationAPISDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationAPISDK.swift; sourceTree = "<group>"; };
 		32D65FF51F543BEB0048A002 /* MovieHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHeader.swift; sourceTree = "<group>"; };
 		32D65FF61F543BEB0048A002 /* MovieHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieHeader.xib; sourceTree = "<group>"; };
 		32D71ADA1F4ED7D9000992B5 /* APISDKFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APISDKFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +228,7 @@
 		32D71AEB1F4ED7F4000992B5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3269EFBA1F5836A500341A69 /* ApiSDKConfiguration.swift */,
 				32D71AEF1F4ED7F4000992B5 /* CardDetailErrors.swift */,
 				32D71AF21F4ED7F4000992B5 /* ConfigModule.swift */,
 				32D71AF31F4ED7F4000992B5 /* ConfigSection.swift */,
@@ -235,7 +236,6 @@
 				32D71AFA1F4ED7F4000992B5 /* ErrorManager.swift */,
 				32D71B0D1F4ED7F4000992B5 /* Target.swift */,
 				32D71B141F4ED7F4000992B5 /* Validatable.swift */,
-				32D65FF31F54035B0048A002 /* ConfigurationAPISDK.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -407,9 +407,9 @@
 			files = (
 				32D71B2D1F4ED7F4000992B5 /* DataModelErrors.swift in Sources */,
 				32D71B281F4ED7F4000992B5 /* ConfigSection.swift in Sources */,
-				32D65FF41F54035C0048A002 /* ConfigurationAPISDK.swift in Sources */,
 				3236001B1F502D22000CED94 /* ToolsExtensions.swift in Sources */,
 				32D71B491F4ED7F4000992B5 /* Validatable.swift in Sources */,
+				3269EFBB1F5836A500341A69 /* ApiSDKConfiguration.swift in Sources */,
 				323600221F502D22000CED94 /* SCSiriWaveformView.m in Sources */,
 				3236001C1F502D22000CED94 /* Measure.swift in Sources */,
 				32D71B201F4ED7F4000992B5 /* ModuleValidator.swift in Sources */,

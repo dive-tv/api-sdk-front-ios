@@ -20,7 +20,6 @@ private typealias completionBlockGetCard = (CardDetailResponse)->Void;
 
 class BaseCardDetailBuilder : NSObject{
     
-    internal var sdkConfiguration : ConfigurationAPISDK?;
     internal var dictSections = [String : ConfigSection]();
     internal var mainKeySection : String?;
     internal var configJSON = [String : String]();
@@ -41,14 +40,13 @@ class BaseCardDetailBuilder : NSObject{
      
      - returns: self
      */
-    init(sdkConfiguration : ConfigurationAPISDK? = nil, restSDKDelegate : APISDKDelegate, bundle : Bundle, relations : [RelationModule]? = nil, completion: @escaping (Section?) -> Void){
+    init(restSDKDelegate : APISDKDelegate, bundle : Bundle, relations : [RelationModule]? = nil, completion: @escaping (Section?) -> Void){
         
         self.bundle = bundle
         self.completion = completion
         
         super.init();
         
-        self.sdkConfiguration = sdkConfiguration;
         self.restSDKFrontDelegate = restSDKDelegate;
         self.relations = relations;
         self.moduleValidator = ModuleValidator();
@@ -92,7 +90,7 @@ class BaseCardDetailBuilder : NSObject{
                     }
                     
                     if (validSections[self.mainKeySection!] != nil) {
-                        section = CardDetailRender(_sectionsData: validSections, _mainSectionKey: self.mainKeySection, _cardDetail: (_response?.body)!, restSDKDelegate: self.restSDKFrontDelegate, sdkConfiguration: self.sdkConfiguration).createSection(self.mainKeySection!)
+                        section = CardDetailRender(_sectionsData: validSections, _mainSectionKey: self.mainKeySection, _cardDetail: (_response?.body)!, restSDKDelegate: self.restSDKFrontDelegate).createSection(self.mainKeySection!)
                     }
                     
                 } else {

@@ -7,3 +7,35 @@
 */
 
 "ADD_LIKE_BTN" = "SAVE FOR LATER";
+
+"HOURS_SHORT" = "h";
+"MINUTES_SHORT" = "m";
+
+// FILTERS
+
+
+"BIOGRAPHY" = "Biografía";
+"COMEDY" = "Comedia";
+"CRIME" = "Crimen";
+"ACTION" = "Acción";
+"THRILLER" = "Suspense";
+"ADVENTURE" = "Aventuras";
+"SCI_FI" = "Ciencia ficción";
+"FANTASY" = "Fantasía";
+"DRAMA" = "Drama";
+"ROMANCE" = "Romántica";
+"TERROR" = "Terror";
+"HISTORY" = "Histórica";
+"WESTERN" = "Western";
+"WAR" = "Bélicas";
+"MISTERY" = "Misterio";
+"FAMILY" = "Familar";
+"SPORT" = "Deporte";
+"MUSIC" = "Música";
+"MUSICAL" = "Musical";
+"ANIMATION" = "Animación";
+"DOCUMENTARY" = "Documental";
+"FILM_NOIR" = "Cine negro";
+"NEWS" = "Noticias";
+"KIDS" = "Infantil";
+"TALK_SHOW" = "Entrevistas";
