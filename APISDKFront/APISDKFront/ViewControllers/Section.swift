@@ -24,7 +24,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     
     fileprivate var configSection : ConfigSection!;
     fileprivate var cardDetail : CardDetailResponse!
-    var cardDelegate : CardDetailDelegate?;
+    var cardDelegate : RenderCardDetailDelegate?;
     private var sdkConfiguration: ConfigurationAPISDK
     var isMain = false;
     
@@ -62,10 +62,14 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         print("Section destroid ------->")
     }
     
-    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-     
-        self.collectionView.reloadData()
+    open override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        flowLayout.invalidateLayout()
     }
     
     //MARK: UIViewController methods
@@ -88,15 +92,15 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
             self.collectionView.collectionViewLayout = layout
         }
         
-        if(self.isMain){
+        if(self.isMain && self.navigationController != nil){
             
-            /*let like = UIBarButtonItem(image: (self.cardDetail.user?.isLiked)! ? #imageLiteral(resourceName: "ico_like_active") : #imageLiteral(resourceName: "ico_like"), style: .plain, target: self, action: #selector(Section.saveCard));
-            like.tintColor = UIColor.diveWarmGreyColor();
+            let like = UIBarButtonItem(image: (self.cardDetail.user?.isLiked)! ? #imageLiteral(resourceName: "ico_like_active") : #imageLiteral(resourceName: "ico_like"), style: .plain, target: self, action: #selector(Section.saveCard));
+            //like.tintColor = UIColor.diveWarmGreyColor();
             
             let more = UIBarButtonItem(image: #imageLiteral(resourceName: "ico_more"), style: .plain, target: self, action: #selector(Section.openOptions));
-            more.tintColor = UIColor.diveWarmGreyColor();
+            //more.tintColor = UIColor.diveWarmGreyColor();
             
-            self.navigationItem.rightBarButtonItems = [more, like];*/
+            self.navigationItem.rightBarButtonItems = [more, like];
         }
         
         for module in self.configSection.arrayModules {
@@ -153,7 +157,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     }
     
     private func sentModuleImpression(name : String){
-        AnalyticsManager.shared.callEventForModule(contentType: name, referrerCardId: self.cardDetail.cardId, referrerType: self.cardDetail.type.rawValue);
+        //AnalyticsManager.shared.callEventForModule(contentType: name, referrerCardId: self.cardDetail.cardId, referrerType: self.cardDetail.type.rawValue);
     }
     
     //MARK: Section delegate
@@ -208,8 +212,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         //cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
         
         cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row], _cardDetail: self.cardDetail);
-        cell.layoutSubviews()
-        cell.layoutIfNeeded()
+        
         return cell;
     }
     
@@ -251,7 +254,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
             print("");
         })
         
-        AnalyticsManager.shared.callEventForLikeUnlike(cardId: self.cardDetail.cardId, liked: self.cardDetail.user?.isLiked);
+        //AnalyticsManager.shared.callEventForLikeUnlike(cardId: self.cardDetail.cardId, liked: self.cardDetail.user?.isLiked);
     }
     
     func openOptions(){

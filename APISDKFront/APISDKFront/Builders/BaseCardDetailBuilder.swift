@@ -11,8 +11,9 @@ import UIKit
 import SwiftyJSON
 import DiveApi
 
-public protocol RestSDKFrontDelegate : class{
+public protocol APISDKDelegate : class{
     func shareOptions(withcardId cardid: String)
+    func touchInCard(section: Section)
 }
 
 private typealias completionBlockGetCard = (CardDetailResponse)->Void;
@@ -23,7 +24,7 @@ class BaseCardDetailBuilder : NSObject{
     internal var dictSections = [String : ConfigSection]();
     internal var mainKeySection : String?;
     internal var configJSON = [String : String]();
-    private weak var restSDKFrontDelegate : RestSDKFrontDelegate?;
+    private weak var restSDKFrontDelegate : APISDKDelegate?;
     private var relations : [RelationModule]?;
     private var bundle : Bundle
     private var completion: (Section?) -> Void
@@ -40,7 +41,7 @@ class BaseCardDetailBuilder : NSObject{
      
      - returns: self
      */
-    init(sdkConfiguration : ConfigurationAPISDK? = nil, restSDKDelegate : RestSDKFrontDelegate, bundle : Bundle, relations : [RelationModule]? = nil, completion: @escaping (Section?) -> Void){
+    init(sdkConfiguration : ConfigurationAPISDK? = nil, restSDKDelegate : APISDKDelegate, bundle : Bundle, relations : [RelationModule]? = nil, completion: @escaping (Section?) -> Void){
         
         self.bundle = bundle
         self.completion = completion

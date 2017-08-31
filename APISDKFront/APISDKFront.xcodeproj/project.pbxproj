@@ -7,15 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		322E45DF1F5542E4009FA621 /* SDKAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322E45DE1F5542E4009FA621 /* SDKAssets.xcassets */; };
-		323600011F502D15000CED94 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236FFF71F502D15000CED94 /* AnalyticsManager.swift */; };
-		323600021F502D15000CED94 /* DiveAuthenticatedIdentityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236FFF91F502D15000CED94 /* DiveAuthenticatedIdentityProvider.swift */; };
-		323600031F502D15000CED94 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236FFFA1F502D15000CED94 /* Constant.swift */; };
-		323600041F502D15000CED94 /* SEGAppsFlyerIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3236FFFC1F502D15000CED94 /* SEGAppsFlyerIntegration.h */; };
-		323600051F502D15000CED94 /* SEGAppsFlyerIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236FFFD1F502D15000CED94 /* SEGAppsFlyerIntegration.m */; };
-		323600061F502D15000CED94 /* SegAppsFlyerIntegrationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3236FFFE1F502D15000CED94 /* SegAppsFlyerIntegrationFactory.h */; };
-		323600071F502D15000CED94 /* SegAppsFlyerIntegrationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236FFFF1F502D15000CED94 /* SegAppsFlyerIntegrationFactory.m */; };
-		323600081F502D15000CED94 /* SegmentAppsFlyeriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 323600001F502D15000CED94 /* SegmentAppsFlyeriOS.h */; };
+		322E45DF1F5542E4009FA621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322E45DE1F5542E4009FA621 /* Assets.xcassets */; };
 		323600191F502D22000CED94 /* AnchorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000A1F502D22000CED94 /* AnchorImage.swift */; };
 		3236001A1F502D22000CED94 /* DiveWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000C1F502D22000CED94 /* DiveWaterFallLayout.swift */; };
 		3236001B1F502D22000CED94 /* ToolsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000D1F502D22000CED94 /* ToolsExtensions.swift */; };
@@ -29,9 +21,10 @@
 		323600231F502D22000CED94 /* SynchroLoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323600171F502D22000CED94 /* SynchroLoadingAnimationView.swift */; };
 		323600241F502D22000CED94 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323600181F502D22000CED94 /* Utils.swift */; };
 		323600261F502DE6000CED94 /* APISDKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323600251F502DE6000CED94 /* APISDKExtensions.swift */; };
+		3269EF911F57FC5800341A69 /* Sizeable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3269EF901F57FC5800341A69 /* Sizeable.xib */; };
 		326DFC481F4EF8C9004E08BC /* DiveApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326DFC471F4EF8C9004E08BC /* DiveApi.framework */; };
 		3273E8D51F5053BD006D8F9D /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273E8D31F5053BD006D8F9D /* Sizeable.swift */; };
-		3273E8D61F5053BD006D8F9D /* Sizeable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3273E8D41F5053BD006D8F9D /* Sizeable.xib */; };
+		32D00D681F56CCE400018304 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32D00D6A1F56CCE400018304 /* Localizable.strings */; };
 		32D65FF41F54035C0048A002 /* ConfigurationAPISDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D65FF31F54035B0048A002 /* ConfigurationAPISDK.swift */; };
 		32D65FF71F543BEB0048A002 /* MovieHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D65FF51F543BEB0048A002 /* MovieHeader.swift */; };
 		32D65FF81F543BEB0048A002 /* MovieHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D65FF61F543BEB0048A002 /* MovieHeader.xib */; };
@@ -56,8 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		322E45DE1F5542E4009FA621 /* SDKAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SDKAssets.xcassets; sourceTree = "<group>"; };
-		323600001F502D15000CED94 /* SegmentAppsFlyeriOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentAppsFlyeriOS.h; sourceTree = "<group>"; };
+		322E45DE1F5542E4009FA621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3236000A1F502D22000CED94 /* AnchorImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorImage.swift; sourceTree = "<group>"; };
 		3236000C1F502D22000CED94 /* DiveWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiveWaterFallLayout.swift; sourceTree = "<group>"; };
 		3236000D1F502D22000CED94 /* ToolsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsExtensions.swift; sourceTree = "<group>"; };
@@ -71,24 +63,19 @@
 		323600171F502D22000CED94 /* SynchroLoadingAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchroLoadingAnimationView.swift; sourceTree = "<group>"; };
 		323600181F502D22000CED94 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		323600251F502DE6000CED94 /* APISDKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISDKExtensions.swift; sourceTree = "<group>"; };
-		3236FFF71F502D15000CED94 /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
-		3236FFF91F502D15000CED94 /* DiveAuthenticatedIdentityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiveAuthenticatedIdentityProvider.swift; sourceTree = "<group>"; };
-		3236FFFA1F502D15000CED94 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		3236FFFC1F502D15000CED94 /* SEGAppsFlyerIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEGAppsFlyerIntegration.h; sourceTree = "<group>"; };
-		3236FFFD1F502D15000CED94 /* SEGAppsFlyerIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEGAppsFlyerIntegration.m; sourceTree = "<group>"; };
-		3236FFFE1F502D15000CED94 /* SegAppsFlyerIntegrationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegAppsFlyerIntegrationFactory.h; sourceTree = "<group>"; };
-		3236FFFF1F502D15000CED94 /* SegAppsFlyerIntegrationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegAppsFlyerIntegrationFactory.m; sourceTree = "<group>"; };
 		323C17D61F4EDD5A007D2DAF /* DiveApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiveApi.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKFront-csfnyidgfbgiufbtorzugaszmeqh/Build/Products/Debug-iphoneos/DiveApi.framework"; sourceTree = "<group>"; };
 		323C17D81F4EDD68007D2DAF /* ToolsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToolsiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKFront-csfnyidgfbgiufbtorzugaszmeqh/Build/Products/Debug-iphoneos/ToolsiOS.framework"; sourceTree = "<group>"; };
 		323C17DA1F4EDD6E007D2DAF /* AnalyticsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnalyticsiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKFront-csfnyidgfbgiufbtorzugaszmeqh/Build/Products/Debug-iphoneos/AnalyticsiOS.framework"; sourceTree = "<group>"; };
 		323C17DC1F4EDDCB007D2DAF /* DiveApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiveApi.framework; path = "../../dive-rest-ios/DiveApi/build/Debug-iphoneos/DiveApi.framework"; sourceTree = "<group>"; };
 		323C17DE1F4EDDFA007D2DAF /* ToolsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToolsiOS.framework; path = "../../tools_ios/ToolsiOS/build/Debug-iphoneos/ToolsiOS.framework"; sourceTree = "<group>"; };
+		3269EF901F57FC5800341A69 /* Sizeable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Sizeable.xib; sourceTree = "<group>"; };
 		326DFC471F4EF8C9004E08BC /* DiveApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiveApi.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/DiveApi.framework"; sourceTree = "<group>"; };
 		326DFC491F4EF8D0004E08BC /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Analytics.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/Analytics/Analytics.framework"; sourceTree = "<group>"; };
 		326DFC4B1F4EF8D7004E08BC /* ToolsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToolsiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/ToolsiOS.framework"; sourceTree = "<group>"; };
 		326DFC4D1F4EF969004E08BC /* AnalyticsiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnalyticsiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/APISDKTestApp-ceifdamuiuwrwsbzeaeweecbdoyg/Build/Products/Debug-iphoneos/AnalyticsiOS.framework"; sourceTree = "<group>"; };
 		3273E8D31F5053BD006D8F9D /* Sizeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
-		3273E8D41F5053BD006D8F9D /* Sizeable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sizeable.xib; sourceTree = "<group>"; };
+		32D00D691F56CCE400018304 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		32D00D6B1F56CDC600018304 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32D65FF31F54035B0048A002 /* ConfigurationAPISDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationAPISDK.swift; sourceTree = "<group>"; };
 		32D65FF51F543BEB0048A002 /* MovieHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHeader.swift; sourceTree = "<group>"; };
 		32D65FF61F543BEB0048A002 /* MovieHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieHeader.xib; sourceTree = "<group>"; };
@@ -141,7 +128,8 @@
 		32283AC21F54412400CA8E3B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				322E45DE1F5542E4009FA621 /* SDKAssets.xcassets */,
+				322E45DE1F5542E4009FA621 /* Assets.xcassets */,
+				32D00D6A1F56CCE400018304 /* Localizable.strings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -190,38 +178,6 @@
 			path = SCSiriWaveformView;
 			sourceTree = "<group>";
 		};
-		3236FFF61F502D15000CED94 /* AnalyticsiOS */ = {
-			isa = PBXGroup;
-			children = (
-				3236FFF71F502D15000CED94 /* AnalyticsManager.swift */,
-				3236FFF81F502D15000CED94 /* AWS */,
-				3236FFFA1F502D15000CED94 /* Constant.swift */,
-				3236FFFB1F502D15000CED94 /* SegmentAppsflyers */,
-			);
-			name = AnalyticsiOS;
-			path = Analytics/AnalyticsiOS;
-			sourceTree = "<group>";
-		};
-		3236FFF81F502D15000CED94 /* AWS */ = {
-			isa = PBXGroup;
-			children = (
-				3236FFF91F502D15000CED94 /* DiveAuthenticatedIdentityProvider.swift */,
-			);
-			path = AWS;
-			sourceTree = "<group>";
-		};
-		3236FFFB1F502D15000CED94 /* SegmentAppsflyers */ = {
-			isa = PBXGroup;
-			children = (
-				3236FFFC1F502D15000CED94 /* SEGAppsFlyerIntegration.h */,
-				3236FFFD1F502D15000CED94 /* SEGAppsFlyerIntegration.m */,
-				3236FFFE1F502D15000CED94 /* SegAppsFlyerIntegrationFactory.h */,
-				3236FFFF1F502D15000CED94 /* SegAppsFlyerIntegrationFactory.m */,
-				323600001F502D15000CED94 /* SegmentAppsFlyeriOS.h */,
-			);
-			path = SegmentAppsflyers;
-			sourceTree = "<group>";
-		};
 		32D71AD01F4ED7D9000992B5 = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +201,6 @@
 			children = (
 				32283AC21F54412400CA8E3B /* Assets */,
 				323600091F502D22000CED94 /* ToolsiOS */,
-				3236FFF61F502D15000CED94 /* AnalyticsiOS */,
 				32DF2B621F4F0A0B008D107B /* DiveFrontSDK.swift */,
 				323600251F502DE6000CED94 /* APISDKExtensions.swift */,
 				32D71AE51F4ED7F4000992B5 /* Builders */,
@@ -290,7 +245,7 @@
 			children = (
 				32D71B161F4ED7F4000992B5 /* SDKFrontModule.swift */,
 				3273E8D31F5053BD006D8F9D /* Sizeable.swift */,
-				3273E8D41F5053BD006D8F9D /* Sizeable.xib */,
+				3269EF901F57FC5800341A69 /* Sizeable.xib */,
 				32D65FF51F543BEB0048A002 /* MovieHeader.swift */,
 				32D65FF61F543BEB0048A002 /* MovieHeader.xib */,
 			);
@@ -330,12 +285,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				323600041F502D15000CED94 /* SEGAppsFlyerIntegration.h in Headers */,
 				323600211F502D22000CED94 /* SCSiriWaveformView.h in Headers */,
 				3236001F1F502D22000CED94 /* UIColor+Equalable.h in Headers */,
-				323600061F502D15000CED94 /* SegAppsFlyerIntegrationFactory.h in Headers */,
 				32D71ADF1F4ED7D9000992B5 /* APISDKFront.h in Headers */,
-				323600081F502D15000CED94 /* SegmentAppsFlyeriOS.h in Headers */,
 				3236001D1F502D22000CED94 /* MZSelectableLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +337,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 32D71AD01F4ED7D9000992B5;
 			productRefGroup = 32D71ADB1F4ED7D9000992B5 /* Products */;
@@ -401,9 +354,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				322E45DF1F5542E4009FA621 /* SDKAssets.xcassets in Resources */,
+				32D00D681F56CCE400018304 /* Localizable.strings in Resources */,
+				3269EF911F57FC5800341A69 /* Sizeable.xib in Resources */,
+				322E45DF1F5542E4009FA621 /* Assets.xcassets in Resources */,
 				32D71B4D1F4ED7F4000992B5 /* Section.xib in Resources */,
-				3273E8D61F5053BD006D8F9D /* Sizeable.xib in Resources */,
 				32D65FF81F543BEB0048A002 /* MovieHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,19 +409,16 @@
 				32D71B281F4ED7F4000992B5 /* ConfigSection.swift in Sources */,
 				32D65FF41F54035C0048A002 /* ConfigurationAPISDK.swift in Sources */,
 				3236001B1F502D22000CED94 /* ToolsExtensions.swift in Sources */,
-				323600031F502D15000CED94 /* Constant.swift in Sources */,
 				32D71B491F4ED7F4000992B5 /* Validatable.swift in Sources */,
 				323600221F502D22000CED94 /* SCSiriWaveformView.m in Sources */,
 				3236001C1F502D22000CED94 /* Measure.swift in Sources */,
 				32D71B201F4ED7F4000992B5 /* ModuleValidator.swift in Sources */,
 				32D71B1D1F4ED7F4000992B5 /* CardDetailBuilder.swift in Sources */,
-				323600021F502D15000CED94 /* DiveAuthenticatedIdentityProvider.swift in Sources */,
 				32D71B241F4ED7F4000992B5 /* CardDetailErrors.swift in Sources */,
 				32D71B271F4ED7F4000992B5 /* ConfigModule.swift in Sources */,
 				32D71B421F4ED7F4000992B5 /* Target.swift in Sources */,
 				323600261F502DE6000CED94 /* APISDKExtensions.swift in Sources */,
 				3236001E1F502D22000CED94 /* MZSelectableLabel.m in Sources */,
-				323600051F502D15000CED94 /* SEGAppsFlyerIntegration.m in Sources */,
 				32D71B1C1F4ED7F4000992B5 /* BaseCardDetailBuilder.swift in Sources */,
 				3273E8D51F5053BD006D8F9D /* Sizeable.swift in Sources */,
 				32D71B4A1F4ED7F4000992B5 /* SDKFrontModule.swift in Sources */,
@@ -479,9 +430,7 @@
 				32DF2B631F4F0A0B008D107B /* DiveFrontSDK.swift in Sources */,
 				32D71B4C1F4ED7F4000992B5 /* Section.swift in Sources */,
 				32D71B1E1F4ED7F4000992B5 /* CardDetailJson.swift in Sources */,
-				323600071F502D15000CED94 /* SegAppsFlyerIntegrationFactory.m in Sources */,
 				323600241F502D22000CED94 /* Utils.swift in Sources */,
-				323600011F502D15000CED94 /* AnalyticsManager.swift in Sources */,
 				323600231F502D22000CED94 /* SynchroLoadingAnimationView.swift in Sources */,
 				3236001A1F502D22000CED94 /* DiveWaterFallLayout.swift in Sources */,
 			);
@@ -489,11 +438,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		32D00D6A1F56CCE400018304 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32D00D691F56CCE400018304 /* en */,
+				32D00D6B1F56CDC600018304 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		32D71AE01F4ED7D9000992B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -549,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

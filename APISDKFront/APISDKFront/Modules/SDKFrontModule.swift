@@ -18,7 +18,7 @@ open class SDKFrontModule : UICollectionViewCell, Validatable{
     internal var visibleItems = 15;
     
     weak var sectionDelegate : SectionDelegate?;
-    weak var cardDelegate : CardDetailDelegate?;
+    weak var cardDelegate : RenderCardDetailDelegate?;
     
     /**
      sets the data for the cell and configures the cell.

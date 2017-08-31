@@ -1,6 +1,0 @@
-framework module Apptimize {
-  umbrella header "Apptimize.h"
-
-  export *
-  module * { export * }
-}

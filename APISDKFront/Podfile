@@ -4,14 +4,7 @@ use_frameworks!
 workspace 'APISDKFront.xcworkspace'
 
 def apiSdkFront_pods
-    pod 'AWSCore', :git => 'https://github.com/animeshp/aws-sdk-ios.git', :commit => '9fff1e2'
-    pod 'Analytics'
-    pod 'AWSCognito'
-    pod 'AWSMobileAnalytics'
-    pod 'AppsFlyerFramework'
-    pod 'Segment-Apptimize'
     pod 'Kingfisher', "~> 3.0"
-    pod 'youtube-ios-player-helper', "~> 0.1.4"
     pod 'SwiftyJSON', "3.0.0"
     pod 'Crashlytics'
 end

@@ -12,45 +12,38 @@ import SwiftyJSON
 import DiveApi
 
 
- protocol CardDetailDelegate : class {
+ protocol RenderCardDetailDelegate : class {
     func createSection (_ _keyForSection : String) -> Section
     func createSections (_ _keyForSections : [String]) -> [Section]
     func newSection(_ _keyForSection : String);
-    
     func newCard(_ _key : String, _type: Int)
-    
     func showListController(viewController : UIViewController);
-    
     func getChapters(cardIds : [String], completion : @escaping (_ cards :[CardDetailResponse]?) -> Void);
-    
     func addRemoveLike(cardId : String, like : Bool, completion : @escaping (_ statusCode : Int) -> Void)
-    
     func goToRoot();
-    
     func shareOptions ()
-    
 }
 
-class CardDetailRender : NSObject, CardDetailDelegate {
+class CardDetailRender : NSObject, RenderCardDetailDelegate {
     
     fileprivate var sectionsData : [String:ConfigSection]!;
     fileprivate var mainSectionKey : String!;
     fileprivate var cardDetail: CardDetailResponse!
     private var sdkConfiguration = ConfigurationAPISDK()
     
-    private weak var restSDKDelegate : RestSDKFrontDelegate?;
+    private weak var apiSDKDelegate : APISDKDelegate?;
     
     
     //MARK: INIT
     
     
-    init(_sectionsData : [String:ConfigSection], _mainSectionKey : String!, _cardDetail : CardDetailResponse, restSDKDelegate : RestSDKFrontDelegate?, sdkConfiguration: ConfigurationAPISDK? = nil) {
+    init(_sectionsData : [String:ConfigSection], _mainSectionKey : String!, _cardDetail : CardDetailResponse, restSDKDelegate : APISDKDelegate?, sdkConfiguration: ConfigurationAPISDK? = nil) {
         
         super.init()
         self.sectionsData = _sectionsData;
         self.mainSectionKey = _mainSectionKey;
         self.cardDetail = _cardDetail
-        self.restSDKDelegate = restSDKDelegate;
+        self.apiSDKDelegate = restSDKDelegate;
         
         if (sdkConfiguration != nil) {
             self.sdkConfiguration = sdkConfiguration!
@@ -76,6 +69,8 @@ class CardDetailRender : NSObject, CardDetailDelegate {
         SDKConfiguration.buttonFont = self.sdkConfiguration.buttonFont
         SDKConfiguration.primaryFont = self.sdkConfiguration.primaryFont
         SDKConfiguration.secondaryFont = self.sdkConfiguration.secondaryFont
+        
+        SDKConfiguration.pocketSave = self.sdkConfiguration.pocketSave
     }
     
     
@@ -125,6 +120,8 @@ class CardDetailRender : NSObject, CardDetailDelegate {
      */
     func newSection(_ _keyForSection: String) {
         //self.pushSection(_keyForSection);
+        let section = self.createSection(_keyForSection)
+        self.apiSDKDelegate?.touchInCard(section: section)
     }
     
     
@@ -163,7 +160,7 @@ class CardDetailRender : NSObject, CardDetailDelegate {
     }
     
     func shareOptions() {
-        self.restSDKDelegate?.shareOptions(withcardId: self.cardDetail.cardId)
+        self.apiSDKDelegate?.shareOptions(withcardId: self.cardDetail.cardId)
     }
     
 }

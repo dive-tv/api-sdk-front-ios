@@ -8,7 +8,6 @@
 
 import UIKit
 import DiveApi
-import ToolsiOS
 
 class MovieHeader: SDKFrontModule {
 
@@ -22,7 +21,8 @@ class MovieHeader: SDKFrontModule {
     
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var saveBtnLabel: UILabel!
+    @IBOutlet weak var saveView: UIView!
     
     
     override func awakeFromNib() {
@@ -30,11 +30,22 @@ class MovieHeader: SDKFrontModule {
         // Initialization code
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.posterImageview.image = nil
+        self.typeLabel.text = nil
+        self.titleLabel.text = nil
+        self.directorLabel.text = nil
+        self.genresLabel.text = nil
+        self.timeLabel.text = nil
+        self.saveBtnLabel.text = nil
+    }
     
     override func setCardDetail(_ _configModule: ConfigModule, _cardDetail: CardDetailResponse) {
         super.setCardDetail(_configModule, _cardDetail: _cardDetail)
         
-        self.posterImageview.downloadImage(_url: cardDetail.image?.thumb, viewMode: .scaleAspectFill)
+        self.posterImageview.downloadImage(_url: cardDetail.image?.thumb, viewMode: .scaleAspectFill, bundle: Bundle(for: self.classForCoder))
         
         self.typeLabel.font = SDKConfiguration.secondaryFont
         self.typeLabel.text = self.cardDetail.type.rawValue.capitalized
@@ -45,7 +56,14 @@ class MovieHeader: SDKFrontModule {
         self.titleLabel.font = SDKConfiguration.primaryFont
         self.titleLabel.textColor = SDKConfiguration.titleColor
         
-        self.saveBtn.isHidden = SDKConfiguration.pocketSave
+        self.saveView.isHidden = SDKConfiguration.pocketSave
+        
+        self.saveView.backgroundColor = SDKConfiguration.buttonBackgroundColor
+        self.saveBtnLabel.font = SDKConfiguration.buttonFont
+        self.saveBtnLabel.textColor = SDKConfiguration.buttonLabelColor
+        self.saveBtnLabel.text = ApiSDKUtils.getStringForLocalized(name: "ADD_LIKE_BTN")
+        
+        
         
         if let catalogContainer = self.cardDetail.getContainer(withModelType: .movie) {
          
@@ -159,5 +177,8 @@ class MovieHeader: SDKFrontModule {
         }
         
     }
-
+    @IBAction func touchSaveBtn(_ sender: UIButton) {
+        
+    }
+    
 }

@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  APISDKFront
+
+  Created by Carlos Bailon Perez on 30/08/2017.
+  Copyright © 2017 Touchvie. All rights reserved.
+*/
+
+"ADD_LIKE_BTN" = "SAVE FOR LATER";

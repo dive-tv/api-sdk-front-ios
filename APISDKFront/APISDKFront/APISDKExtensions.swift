@@ -26,7 +26,13 @@ class SDKConfiguration {
     static var pocketSave: Bool = false
 }
 
-
+class ApiSDKUtils {
+    
+    class func getStringForLocalized (name: String) -> String {
+        
+        return Bundle(for: self).localizedString(forKey: name, value: nil, table: nil)
+    }
+}
 //MARK: UIFont
 
 
