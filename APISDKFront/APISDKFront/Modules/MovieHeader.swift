@@ -56,7 +56,7 @@ class MovieHeader: SDKFrontModule {
         self.titleLabel.font = ApiSDKConfiguration.primaryFont
         self.titleLabel.textColor = ApiSDKConfiguration.titleColor
         
-        self.saveView.isHidden = ApiSDKConfiguration.pocketSave
+        self.saveView.isHidden = !ApiSDKConfiguration.pocketSave
         
         self.saveView.backgroundColor = ApiSDKConfiguration.buttonBackgroundColor
         self.saveBtnLabel.font = ApiSDKConfiguration.buttonFont

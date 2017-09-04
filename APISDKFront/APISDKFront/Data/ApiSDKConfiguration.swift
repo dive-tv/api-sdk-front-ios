@@ -13,6 +13,10 @@ import Foundation
 open class ApiSDKConfiguration {
     
     open static var scrollDirection : UICollectionViewScrollDirection = .vertical
+    open static var minimunSpaceCells : CGFloat = 10
+    open static var separators : Bool = true
+    
+    
     open static var primaryFont: UIFont = UIFont.systemFont(ofSize: 11)
     open static var secondaryFont: UIFont = UIFont.systemFont(ofSize: 10)
     open static var buttonFont: UIFont = UIFont.systemFont(ofSize: 9)

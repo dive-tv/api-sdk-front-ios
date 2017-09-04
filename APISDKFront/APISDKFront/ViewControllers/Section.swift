@@ -98,6 +98,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
             self.navigationItem.rightBarButtonItems = [more, like];
         }
         
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "nativeCell")
         for module in self.configSection.arrayModules {
             
             self.collectionView.register(UINib(nibName: module.moduleName!, bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier: module.moduleName!)
@@ -206,23 +207,43 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     }
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.configSection.arrayModules.count
+        
+        if (ApiSDKConfiguration.separators) {
+            return (self.configSection.arrayModules.count * 2) - 1
+        } else {
+            return self.configSection.arrayModules.count
+        }
     }
     
     
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.configSection.arrayModules[indexPath.row].moduleName!, for: indexPath) as! SDKFrontModule;
-        cell.sectionDelegate = self;
-        cell.cardDelegate = self.cardDelegate;
-        cell.backgroundColor = .clear
-        cell.backgroundView?.backgroundColor = .clear
-        //cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
+        if (!ApiSDKConfiguration.separators || indexPath.row == 0 || indexPath.row % 2 == 0) {
+            
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.configSection.arrayModules[indexPath.row].moduleName!, for: indexPath) as! SDKFrontModule;
+            cell.sectionDelegate = self;
+            cell.cardDelegate = self.cardDelegate;
+            cell.backgroundColor = .clear
+            cell.backgroundView?.backgroundColor = .clear
+            //cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
+            
+            cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row], _cardDetail: self.cardDetail);
+            
+            return cell;
+        } else {
+            
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "nativeCell", for: indexPath)
+            cell.backgroundView?.backgroundColor = .white
+            cell.backgroundColor = .white
+            return cell
+        }
         
-        cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row], _cardDetail: self.cardDetail);
         
-        return cell;
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return ApiSDKConfiguration.minimunSpaceCells
     }
     
     //MARK: UICollectionViewDelegateFlowLayout
@@ -231,10 +252,15 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             
-            let height = (collectionView.bounds.width * 170) / 250
-            let width = (collectionView.bounds.height * 250) / 170
-            
-            return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: height) : CGSize(width: width, height: collectionView.bounds.height)
+            if (!ApiSDKConfiguration.separators || indexPath.row == 0 || indexPath.row % 2 == 0) {
+                
+                let height = (collectionView.bounds.width * 170) / 250
+                let width = (collectionView.bounds.height * 250) / 170
+                
+                return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: height) : CGSize(width: width, height: collectionView.bounds.height)
+            } else {
+                return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: 2) : CGSize(width: 2, height: collectionView.bounds.height)
+            }
         }
         
         return CGSize.zero

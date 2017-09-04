@@ -84,7 +84,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="xia-Bf-ndp">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="800" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="xia-Bf-ndp">
                                         <rect key="frame" x="0.0" y="85.5" width="334.5" height="20.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" image="ico_oclock" translatesAutoresizingMaskIntoConstraints="NO" id="apz-5S-3EY">
