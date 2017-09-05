@@ -62,6 +62,10 @@ class Overview: SDKFrontModule {
         }
     }
     
+    //TODO:--handling url from source still to be defined
+    @IBAction func openSource(_ sender: Any) {
+    }
+    
     private func setSynopSisTextScroll() {
         
         DispatchQueue.main.async {

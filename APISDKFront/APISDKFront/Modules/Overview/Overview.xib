@@ -33,39 +33,49 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuente:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgN-1Y-GzP">
-                                <rect key="frame" x="15" y="363" width="30" height="11"/>
+                                <rect key="frame" x="15" y="353.5" width="30" height="11"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="9"/>
                                 <color key="textColor" red="0.30980392159999998" green="0.72549019609999998" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oae-uZ-RUr">
-                                <rect key="frame" x="55" y="363" width="21.5" height="11"/>
+                                <rect key="frame" x="55" y="344" width="30" height="30"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="9"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K68-G7-RxH">
-                                <rect key="frame" x="15" y="42" width="401" height="306"/>
+                                <rect key="frame" x="15" y="42" width="401" height="296.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exk-wq-Amo">
+                                <rect key="frame" x="55" y="344" width="30" height="30"/>
+                                <connections>
+                                    <action selector="openSource:" destination="1wl-tu-F2S" eventType="touchUpInside" id="WX0-8D-fJh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dai-LD-f3R" firstAttribute="leading" secondItem="L8w-ZW-n0H" secondAttribute="leading" constant="15" id="9LZ-Kl-15R"/>
                             <constraint firstItem="oae-uZ-RUr" firstAttribute="centerY" secondItem="HgN-1Y-GzP" secondAttribute="centerY" id="9hI-5S-eF4"/>
                             <constraint firstItem="K68-G7-RxH" firstAttribute="leading" secondItem="L8w-ZW-n0H" secondAttribute="leading" constant="15" id="EyG-4d-qo1"/>
+                            <constraint firstItem="Exk-wq-Amo" firstAttribute="leading" secondItem="oae-uZ-RUr" secondAttribute="leading" id="MLM-R8-HwQ"/>
                             <constraint firstItem="HgN-1Y-GzP" firstAttribute="top" secondItem="K68-G7-RxH" secondAttribute="bottom" constant="15" id="RYM-Hw-tJx"/>
                             <constraint firstItem="K68-G7-RxH" firstAttribute="top" secondItem="Dai-LD-f3R" secondAttribute="bottom" constant="15" id="Yqz-Yg-Ahi"/>
                             <constraint firstAttribute="trailing" secondItem="K68-G7-RxH" secondAttribute="trailing" constant="15" id="Zgh-0F-v5v"/>
                             <constraint firstItem="HgN-1Y-GzP" firstAttribute="leading" secondItem="L8w-ZW-n0H" secondAttribute="leading" constant="15" id="b2L-0C-Hsd"/>
+                            <constraint firstItem="Exk-wq-Amo" firstAttribute="trailing" secondItem="oae-uZ-RUr" secondAttribute="trailing" id="d2w-Zp-Ee3"/>
+                            <constraint firstItem="Exk-wq-Amo" firstAttribute="bottom" secondItem="oae-uZ-RUr" secondAttribute="bottom" id="l13-Ln-uHU"/>
                             <constraint firstItem="Dai-LD-f3R" firstAttribute="top" secondItem="L8w-ZW-n0H" secondAttribute="top" constant="15" id="nk8-vT-G0U"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dai-LD-f3R" secondAttribute="trailing" constant="15" id="tMl-T8-ItX"/>
                             <constraint firstAttribute="bottom" secondItem="oae-uZ-RUr" secondAttribute="bottom" constant="26" id="xZ5-1n-3M9"/>
                             <constraint firstItem="oae-uZ-RUr" firstAttribute="leading" secondItem="HgN-1Y-GzP" secondAttribute="trailing" constant="10" id="yLM-O2-dnm"/>
+                            <constraint firstItem="Exk-wq-Amo" firstAttribute="top" secondItem="oae-uZ-RUr" secondAttribute="top" id="zaL-em-rX3"/>
                         </constraints>
                     </view>
                 </subviews>
