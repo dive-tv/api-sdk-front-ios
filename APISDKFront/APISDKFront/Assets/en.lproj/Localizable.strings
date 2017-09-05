@@ -39,3 +39,6 @@
 "NEWS" = "Noticias";
 "KIDS" = "Infantil";
 "TALK_SHOW" = "Entrevistas";
+
+// MODULE CARD DETAIL
+"Synopsis" = "Synopsis";

@@ -27,6 +27,9 @@ open class ApiSDKConfiguration {
     open static var titleColor: UIColor = .red
     open static var secondaryColor: UIColor = .blue
     open static var cliclableColor: UIColor = .yellow
+    open static var synopsisTextColor: UIColor = .lightGray
+    open static var greenLabelColor = UIColor(red: 39/255, green: 155/255, blue: 139/255, alpha: 1.0)
+    
     
     
     open static var buttonLabelColor: UIColor = .brown

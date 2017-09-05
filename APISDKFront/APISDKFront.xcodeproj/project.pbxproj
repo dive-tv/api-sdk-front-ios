@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3176F81F1F5D677E00FD823D /* Overview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3176F81E1F5D677E00FD823D /* Overview.xib */; };
+		3176F8221F5D67F300FD823D /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3176F8211F5D67F300FD823D /* Overview.swift */; };
 		322E45DF1F5542E4009FA621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322E45DE1F5542E4009FA621 /* Assets.xcassets */; };
 		323600191F502D22000CED94 /* AnchorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000A1F502D22000CED94 /* AnchorImage.swift */; };
 		3236001A1F502D22000CED94 /* DiveWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000C1F502D22000CED94 /* DiveWaterFallLayout.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3176F81E1F5D677E00FD823D /* Overview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Overview.xib; sourceTree = "<group>"; };
+		3176F8211F5D67F300FD823D /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		322E45DE1F5542E4009FA621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3236000A1F502D22000CED94 /* AnchorImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorImage.swift; sourceTree = "<group>"; };
 		3236000C1F502D22000CED94 /* DiveWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiveWaterFallLayout.swift; sourceTree = "<group>"; };
@@ -123,6 +127,24 @@
 				32F05EE026BF1E4DFA833A03 /* Pods-APISDKFront.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3176F81D1F5D666600FD823D /* MovieHeader */ = {
+			isa = PBXGroup;
+			children = (
+				32D65FF51F543BEB0048A002 /* MovieHeader.swift */,
+				32D65FF61F543BEB0048A002 /* MovieHeader.xib */,
+			);
+			path = MovieHeader;
+			sourceTree = "<group>";
+		};
+		3176F8201F5D678E00FD823D /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				3176F81E1F5D677E00FD823D /* Overview.xib */,
+				3176F8211F5D67F300FD823D /* Overview.swift */,
+			);
+			path = Overview;
 			sourceTree = "<group>";
 		};
 		32283AC21F54412400CA8E3B /* Assets */ = {
@@ -246,8 +268,8 @@
 				32D71B161F4ED7F4000992B5 /* SDKFrontModule.swift */,
 				3273E8D31F5053BD006D8F9D /* Sizeable.swift */,
 				3269EF901F57FC5800341A69 /* Sizeable.xib */,
-				32D65FF51F543BEB0048A002 /* MovieHeader.swift */,
-				32D65FF61F543BEB0048A002 /* MovieHeader.xib */,
+				3176F81D1F5D666600FD823D /* MovieHeader */,
+				3176F8201F5D678E00FD823D /* Overview */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -358,6 +380,7 @@
 				3269EF911F57FC5800341A69 /* Sizeable.xib in Resources */,
 				322E45DF1F5542E4009FA621 /* Assets.xcassets in Resources */,
 				32D71B4D1F4ED7F4000992B5 /* Section.xib in Resources */,
+				3176F81F1F5D677E00FD823D /* Overview.xib in Resources */,
 				32D65FF81F543BEB0048A002 /* MovieHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +443,7 @@
 				323600261F502DE6000CED94 /* APISDKExtensions.swift in Sources */,
 				3236001E1F502D22000CED94 /* MZSelectableLabel.m in Sources */,
 				32D71B1C1F4ED7F4000992B5 /* BaseCardDetailBuilder.swift in Sources */,
+				3176F8221F5D67F300FD823D /* Overview.swift in Sources */,
 				3273E8D51F5053BD006D8F9D /* Sizeable.swift in Sources */,
 				32D71B4A1F4ED7F4000992B5 /* SDKFrontModule.swift in Sources */,
 				32D65FF71F543BEB0048A002 /* MovieHeader.swift in Sources */,

@@ -108,6 +108,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
+        
         self.indexPathsAnalytics.removeAll();
         self.finishReload = false;
         self.collectionView.reloadData {
@@ -221,14 +222,14 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         
         if (!ApiSDKConfiguration.separators || indexPath.row == 0 || indexPath.row % 2 == 0) {
             
-            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.configSection.arrayModules[indexPath.row].moduleName!, for: indexPath) as! SDKFrontModule;
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.configSection.arrayModules[indexPath.row / 2].moduleName!, for: indexPath) as! SDKFrontModule
             cell.sectionDelegate = self;
             cell.cardDelegate = self.cardDelegate;
             cell.backgroundColor = .clear
             cell.backgroundView?.backgroundColor = .clear
             //cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
             
-            cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row], _cardDetail: self.cardDetail);
+            cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row / 2], _cardDetail: self.cardDetail);
             
             return cell;
         } else {
@@ -238,8 +239,6 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
             cell.backgroundColor = .white
             return cell
         }
-        
-        
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
