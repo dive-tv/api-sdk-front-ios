@@ -19,6 +19,8 @@
 		31DE95161F5FF16000841995 /* BasicInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE95151F5FF16000841995 /* BasicInfo.xib */; };
 		31DE95191F5FF49700841995 /* BasicInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE95171F5FF49700841995 /* BasicInfoCollectionViewCell.swift */; };
 		31DE951A1F5FF49700841995 /* BasicInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE95181F5FF49700841995 /* BasicInfoCollectionViewCell.xib */; };
+		31DE951C1F6022CD00841995 /* PlacesShown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE951B1F6022CD00841995 /* PlacesShown.swift */; };
+		31DE95211F60253900841995 /* PlacesShown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DE95201F60253800841995 /* PlacesShown.xib */; };
 		322E45DF1F5542E4009FA621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322E45DE1F5542E4009FA621 /* Assets.xcassets */; };
 		323600191F502D22000CED94 /* AnchorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000A1F502D22000CED94 /* AnchorImage.swift */; };
 		3236001A1F502D22000CED94 /* DiveWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000C1F502D22000CED94 /* DiveWaterFallLayout.swift */; };
@@ -73,6 +75,8 @@
 		31DE95151F5FF16000841995 /* BasicInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicInfo.xib; sourceTree = "<group>"; };
 		31DE95171F5FF49700841995 /* BasicInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		31DE95181F5FF49700841995 /* BasicInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		31DE951B1F6022CD00841995 /* PlacesShown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesShown.swift; sourceTree = "<group>"; };
+		31DE95201F60253800841995 /* PlacesShown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesShown.xib; sourceTree = "<group>"; };
 		322E45DE1F5542E4009FA621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3236000A1F502D22000CED94 /* AnchorImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorImage.swift; sourceTree = "<group>"; };
 		3236000C1F502D22000CED94 /* DiveWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiveWaterFallLayout.swift; sourceTree = "<group>"; };
@@ -205,6 +209,15 @@
 			path = BasicInfoCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		31DE951D1F6022D100841995 /* PlacesShown */ = {
+			isa = PBXGroup;
+			children = (
+				31DE95201F60253800841995 /* PlacesShown.xib */,
+				31DE951B1F6022CD00841995 /* PlacesShown.swift */,
+			);
+			path = PlacesShown;
+			sourceTree = "<group>";
+		};
 		32283AC21F54412400CA8E3B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +345,7 @@
 				3176F8201F5D678E00FD823D /* Overview */,
 				317453A81F5E9D3E00843E5B /* Cast */,
 				31DE950D1F5FEAAA00841995 /* BasicInfo */,
+				31DE951D1F6022D100841995 /* PlacesShown */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -447,6 +461,7 @@
 				3176F81F1F5D677E00FD823D /* Overview.xib in Resources */,
 				317453B71F5EAAC600843E5B /* CastCollectionViewCell.xib in Resources */,
 				32D65FF81F543BEB0048A002 /* MovieHeader.xib in Resources */,
+				31DE95211F60253900841995 /* PlacesShown.xib in Resources */,
 				317453AC1F5EA1F700843E5B /* Cast.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +536,7 @@
 				31DE950A1F5FE10C00841995 /* Constants.swift in Sources */,
 				31DE950F1F5FEC6500841995 /* BasicInfo.swift in Sources */,
 				323600201F502D22000CED94 /* UIColor+Equalable.m in Sources */,
+				31DE951C1F6022CD00841995 /* PlacesShown.swift in Sources */,
 				317453AE1F5EA45D00843E5B /* Cast.swift in Sources */,
 				32D71B2F1F4ED7F4000992B5 /* ErrorManager.swift in Sources */,
 				32DF2B631F4F0A0B008D107B /* DiveFrontSDK.swift in Sources */,
