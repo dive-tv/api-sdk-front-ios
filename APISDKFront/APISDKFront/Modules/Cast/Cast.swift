@@ -14,11 +14,7 @@ class Cast: SDKFrontModule, UICollectionViewDelegate, UICollectionViewDataSource
     @IBOutlet weak var castLabel: UILabel!
     @IBOutlet weak var castCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeightConstrain: NSLayoutConstraint!
-    
     @IBOutlet weak var castMainView: UIView!
-    
-
-    
     
     internal var dataCast : Duple?
     
@@ -52,19 +48,17 @@ class Cast: SDKFrontModule, UICollectionViewDelegate, UICollectionViewDataSource
         
         //MARK: -Set up background color
         self.castMainView.backgroundColor = ApiSDKConfiguration.modulesBackgroundColor
-        
-        //MARK: -Set up Cast module title
-        self.castLabel.text = ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.cast).uppercased()
-        self.castLabel.textColor = ApiSDKConfiguration.titleColor
-        self.castLabel.font = ApiSDKConfiguration.secondaryFont
-        
-        //MARK: -Set up collectionView background color
-       
+
         
         //MARK: - Set up relations
         if let relations = self.cardDetail.getRelations(withRelationType: .casting) {
             
             self.dataCast = relations
+            
+            //MARK: -Set up Cast module title
+            self.castLabel.text = ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.cast).uppercased()
+            self.castLabel.textColor = ApiSDKConfiguration.titleColor
+            self.castLabel.font = ApiSDKConfiguration.secondaryFont
             //self.setUpCollectionViewTitle()
         }
         
@@ -122,7 +116,7 @@ class Cast: SDKFrontModule, UICollectionViewDelegate, UICollectionViewDataSource
     
     func setUpCollectionViewTitle() {
         
-        //MARK: - What if there´s no data
+        //TODO: - What if there´s no data
         if self.dataCast?.data == nil {
             
             self.collectionViewHeightConstrain.constant = 255

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basicInfoCell" id="gTV-IL-0wX" customClass="BasicInfoCollectionViewCell" customModule="APISDKFront" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osm-2V-j7N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="136" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JW-pj-DfO">
+                                <rect key="frame" x="135" y="6" width="170" height="18"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Release" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4r-ia-f7t">
+                                <rect key="frame" x="15" y="6" width="120" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="zST-oI-7xX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0JW-pj-DfO" firstAttribute="top" secondItem="osm-2V-j7N" secondAttribute="top" constant="6" id="3Uf-Se-rvr"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="u4r-ia-f7t" secondAttribute="bottom" constant="6" id="4V9-y1-HVv"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0JW-pj-DfO" secondAttribute="bottom" constant="6" id="S3z-39-lnn"/>
+                            <constraint firstItem="u4r-ia-f7t" firstAttribute="leading" secondItem="osm-2V-j7N" secondAttribute="leading" constant="15" id="WPi-Db-dBU"/>
+                            <constraint firstItem="0JW-pj-DfO" firstAttribute="leading" secondItem="u4r-ia-f7t" secondAttribute="trailing" id="fwQ-RU-XTX"/>
+                            <constraint firstItem="u4r-ia-f7t" firstAttribute="top" secondItem="osm-2V-j7N" secondAttribute="top" constant="6" id="spg-GS-4vJ"/>
+                            <constraint firstAttribute="trailing" secondItem="0JW-pj-DfO" secondAttribute="trailing" constant="15" id="x2v-1e-Wbf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="osm-2V-j7N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GjY-VX-BUm"/>
+                <constraint firstAttribute="trailing" secondItem="osm-2V-j7N" secondAttribute="trailing" id="NFy-D2-XzY"/>
+                <constraint firstAttribute="bottom" secondItem="osm-2V-j7N" secondAttribute="bottom" id="klV-aY-Mn4"/>
+                <constraint firstItem="osm-2V-j7N" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vIP-rJ-fAe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="320" height="104"/>
+            <connections>
+                <outlet property="basicDataContentLabel" destination="0JW-pj-DfO" id="Sb0-fI-U50"/>
+                <outlet property="basicDataTitleLabel" destination="u4r-ia-f7t" id="xV7-7D-7nO"/>
+                <outlet property="basicInfoView" destination="osm-2V-j7N" id="iL3-Ic-Kuv"/>
+            </connections>
+            <point key="canvasLocation" x="-1" y="36"/>
+        </collectionViewCell>
+    </objects>
+</document>
