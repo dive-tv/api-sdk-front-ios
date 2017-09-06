@@ -61,7 +61,7 @@ class MovieHeader: SDKFrontModule {
         self.saveView.backgroundColor = ApiSDKConfiguration.buttonBackgroundColor
         self.saveBtnLabel.font = ApiSDKConfiguration.buttonFont
         self.saveBtnLabel.textColor = ApiSDKConfiguration.buttonLabelColor
-        self.saveBtnLabel.text = ToolsUtils.getStringForLocalized(name: "ADD_LIKE_BTN")
+        self.saveBtnLabel.text = ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.addLikeButton)
         
         
         
@@ -109,15 +109,6 @@ class MovieHeader: SDKFrontModule {
                     }
                     
                     self.directorLabel.text = keysStr
-                    //self.directorLabel.selectableRanges = ranges
-                    
-                    //self.directorLabel.selectionHandler
-                    //self.directorLabel.configFontAttributedString(keysStr, textToChange: keysStr, fontName: self.labelProducer.font!);
-                    /*self.directorLabel.addSelectableRanges(ranges: ranges, completion: { (value : String) in
-                        if let cardId = values[value]{
-                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openCardNotification"), object: cardId);
-                        }
-                    })*/
                 }
                 break
                 
@@ -167,11 +158,11 @@ class MovieHeader: SDKFrontModule {
                     }
                     
                 }
-                self.timeLabel.text = "\(hour)\(ToolsUtils.getStringForLocalized(name: "HOURS_SHORT")) \(stringMinutes)\(ToolsUtils.getStringForLocalized(name: "MINUTES_SHORT"))";
+                self.timeLabel.text = "\(hour)\(ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.hourShorten)) \(stringMinutes)\(ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.minutesShorten))";
                 
             }
             else{
-                self.timeLabel.text = "\(duration) \(ToolsUtils.getStringForLocalized(name: "MINUTES_SHORT"))";
+                self.timeLabel.text = "\(duration) \(ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.minutesShorten))";
             }
         }
         else{

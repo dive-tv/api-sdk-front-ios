@@ -65,6 +65,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         }
         
         flowLayout.invalidateLayout()
+        
     }
     
     //MARK: UIViewController methods
@@ -77,14 +78,14 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         
         self.view.backgroundColor = UIColor.white;
         self.collectionView.backgroundColor = UIColor.white;
-        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "nativeCell")
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: C.Cell.nativeCell)
         self.collectionView.backgroundColor = ApiSDKConfiguration.backgroundColor
         
         if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             self.collectionView.alwaysBounceVertical = ApiSDKConfiguration.scrollDirection == .vertical ? true : false
             self.collectionView.alwaysBounceHorizontal = ApiSDKConfiguration.scrollDirection == .horizontal ? true : false
             layout.scrollDirection = ApiSDKConfiguration.scrollDirection
-            self.collectionView.collectionViewLayout = layout
+           
         }
         
         if(self.isMain && self.navigationController != nil){
@@ -98,10 +99,19 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
             self.navigationItem.rightBarButtonItems = [more, like];
         }
         
-        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "nativeCell")
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: C.Cell.nativeCell)
         for module in self.configSection.arrayModules {
             
             self.collectionView.register(UINib(nibName: module.moduleName!, bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier: module.moduleName!)
+        }
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        self.collectionView.reloadData {
+            self.checkVisibleCells();
+            self.finishReload = true;
         }
     }
     
@@ -111,10 +121,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         
         self.indexPathsAnalytics.removeAll();
         self.finishReload = false;
-        self.collectionView.reloadData {
-            self.checkVisibleCells();
-            self.finishReload = true;
-        }
+        
         
         //self.tableView.setContentOffset(self.tableView.contentOffset, animated: false);
     }
@@ -231,10 +238,13 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
             
             cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row / 2], _cardDetail: self.cardDetail);
             
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            
             return cell;
         } else {
             
-            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "nativeCell", for: indexPath)
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: C.Cell.nativeCell, for: indexPath)
             cell.backgroundView?.backgroundColor = .white
             cell.backgroundColor = .white
             return cell
@@ -278,11 +288,10 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
         //more.tintColor = UIColor.diveWarmGreyColor();
         
         self.navigationItem.rightBarButtonItems = [more, like];
-        
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addLikeNotification"), object: self.cardDetail);
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeLikeProductNotification"), object: self.cardDetail);
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addLikeMenuItemNotification"), object: self.cardDetail);
+
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: C.NotificationNames.addLikeNotification), object: self.cardDetail);
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: C.NotificationNames.changeLikeProductNotification), object: self.cardDetail);
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: C.NotificationNames.addLikeMenuItemNotification), object: self.cardDetail);
         
         self.cardDelegate?.addRemoveLike(cardId: self.cardDetail.cardId, like: (self.cardDetail.user?.isLiked!)!, completion: { (statusCode) in
             print("");

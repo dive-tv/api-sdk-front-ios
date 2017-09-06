@@ -46,7 +46,7 @@ class Overview: SDKFrontModule {
             self.contentText.text = overViewContainer.data[0].text
             
             //MARK:-- Set up title in the Synopsis module
-            self.headerLabel.text = ToolsUtils.getStringForLocalized(name: "Synopsis").uppercased()
+            self.headerLabel.text = ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.synopsis).uppercased()
             self.headerLabel.textColor = ApiSDKConfiguration.titleColor
             self.headerLabel.font = ApiSDKConfiguration.secondaryFont
             

@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		317453AC1F5EA1F700843E5B /* Cast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317453AB1F5EA1F700843E5B /* Cast.xib */; };
+		317453AE1F5EA45D00843E5B /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317453AD1F5EA45D00843E5B /* Cast.swift */; };
+		317453B41F5EAA9200843E5B /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317453B21F5EAA9200843E5B /* CastCollectionViewCell.swift */; };
+		317453B71F5EAAC600843E5B /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317453B61F5EAAC600843E5B /* CastCollectionViewCell.xib */; };
 		3176F81F1F5D677E00FD823D /* Overview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3176F81E1F5D677E00FD823D /* Overview.xib */; };
 		3176F8221F5D67F300FD823D /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3176F8211F5D67F300FD823D /* Overview.swift */; };
+		31DE95081F5FE10100841995 /* SelectableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE95071F5FE10000841995 /* SelectableLabel.swift */; };
+		31DE950A1F5FE10C00841995 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE95091F5FE10C00841995 /* Constants.swift */; };
 		322E45DF1F5542E4009FA621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322E45DE1F5542E4009FA621 /* Assets.xcassets */; };
 		323600191F502D22000CED94 /* AnchorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000A1F502D22000CED94 /* AnchorImage.swift */; };
 		3236001A1F502D22000CED94 /* DiveWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236000C1F502D22000CED94 /* DiveWaterFallLayout.swift */; };
@@ -51,8 +57,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		317453AB1F5EA1F700843E5B /* Cast.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cast.xib; sourceTree = "<group>"; };
+		317453AD1F5EA45D00843E5B /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
+		317453B21F5EAA9200843E5B /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
+		317453B61F5EAAC600843E5B /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
 		3176F81E1F5D677E00FD823D /* Overview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Overview.xib; sourceTree = "<group>"; };
 		3176F8211F5D67F300FD823D /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
+		31DE95071F5FE10000841995 /* SelectableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableLabel.swift; sourceTree = "<group>"; };
+		31DE95091F5FE10C00841995 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		322E45DE1F5542E4009FA621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3236000A1F502D22000CED94 /* AnchorImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorImage.swift; sourceTree = "<group>"; };
 		3236000C1F502D22000CED94 /* DiveWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiveWaterFallLayout.swift; sourceTree = "<group>"; };
@@ -129,6 +141,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		317453A81F5E9D3E00843E5B /* Cast */ = {
+			isa = PBXGroup;
+			children = (
+				317453AB1F5EA1F700843E5B /* Cast.xib */,
+				317453AD1F5EA45D00843E5B /* Cast.swift */,
+				317453B11F5EA84000843E5B /* CastCollectionViewCell */,
+			);
+			path = Cast;
+			sourceTree = "<group>";
+		};
+		317453B11F5EA84000843E5B /* CastCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				317453B61F5EAAC600843E5B /* CastCollectionViewCell.xib */,
+				317453B21F5EAA9200843E5B /* CastCollectionViewCell.swift */,
+			);
+			path = CastCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		3176F81D1F5D666600FD823D /* MovieHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +190,7 @@
 		323600091F502D22000CED94 /* ToolsiOS */ = {
 			isa = PBXGroup;
 			children = (
+				31DE95091F5FE10C00841995 /* Constants.swift */,
 				3236000A1F502D22000CED94 /* AnchorImage.swift */,
 				3236000B1F502D22000CED94 /* Collection Layout */,
 				3236000D1F502D22000CED94 /* ToolsExtensions.swift */,
@@ -183,6 +215,7 @@
 		3236000F1F502D22000CED94 /* MZSelectableLabel */ = {
 			isa = PBXGroup;
 			children = (
+				31DE95071F5FE10000841995 /* SelectableLabel.swift */,
 				323600101F502D22000CED94 /* MZSelectableLabel.h */,
 				323600111F502D22000CED94 /* MZSelectableLabel.m */,
 				323600121F502D22000CED94 /* UIColor+Equalable.h */,
@@ -270,6 +303,7 @@
 				3269EF901F57FC5800341A69 /* Sizeable.xib */,
 				3176F81D1F5D666600FD823D /* MovieHeader */,
 				3176F8201F5D678E00FD823D /* Overview */,
+				317453A81F5E9D3E00843E5B /* Cast */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -381,7 +415,9 @@
 				322E45DF1F5542E4009FA621 /* Assets.xcassets in Resources */,
 				32D71B4D1F4ED7F4000992B5 /* Section.xib in Resources */,
 				3176F81F1F5D677E00FD823D /* Overview.xib in Resources */,
+				317453B71F5EAAC600843E5B /* CastCollectionViewCell.xib in Resources */,
 				32D65FF81F543BEB0048A002 /* MovieHeader.xib in Resources */,
+				317453AC1F5EA1F700843E5B /* Cast.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +468,8 @@
 				32D71B281F4ED7F4000992B5 /* ConfigSection.swift in Sources */,
 				3236001B1F502D22000CED94 /* ToolsExtensions.swift in Sources */,
 				32D71B491F4ED7F4000992B5 /* Validatable.swift in Sources */,
+				31DE95081F5FE10100841995 /* SelectableLabel.swift in Sources */,
+				317453B41F5EAA9200843E5B /* CastCollectionViewCell.swift in Sources */,
 				3269EFBB1F5836A500341A69 /* ApiSDKConfiguration.swift in Sources */,
 				323600221F502D22000CED94 /* SCSiriWaveformView.m in Sources */,
 				3236001C1F502D22000CED94 /* Measure.swift in Sources */,
@@ -449,7 +487,9 @@
 				32D65FF71F543BEB0048A002 /* MovieHeader.swift in Sources */,
 				323600191F502D22000CED94 /* AnchorImage.swift in Sources */,
 				32D71B1F1F4ED7F4000992B5 /* CardDetailRender.swift in Sources */,
+				31DE950A1F5FE10C00841995 /* Constants.swift in Sources */,
 				323600201F502D22000CED94 /* UIColor+Equalable.m in Sources */,
+				317453AE1F5EA45D00843E5B /* Cast.swift in Sources */,
 				32D71B2F1F4ED7F4000992B5 /* ErrorManager.swift in Sources */,
 				32DF2B631F4F0A0B008D107B /* DiveFrontSDK.swift in Sources */,
 				32D71B4C1F4ED7F4000992B5 /* Section.swift in Sources */,
