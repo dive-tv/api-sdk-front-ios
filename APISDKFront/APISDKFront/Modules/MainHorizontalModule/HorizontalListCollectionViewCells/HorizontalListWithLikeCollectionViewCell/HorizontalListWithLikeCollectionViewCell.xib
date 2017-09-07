@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CastCell" id="gTV-IL-0wX" customClass="CastCollectionViewCell" customModule="APISDKFront" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="horizontalModuleWithLikeCellId" id="gTV-IL-0wX" customClass="HorizontalListWithLikeCollectionViewCell" customModule="APISDKFront" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="144" height="264"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -39,12 +39,20 @@
                                         <color key="textColor" red="0.95686274510000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vy-Mo-1CR">
+                                        <rect key="frame" x="108" y="8" width="28" height="22"/>
+                                        <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="ico_like"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4vy-Mo-1CR" secondAttribute="trailing" constant="8" id="9ft-JG-x36"/>
                                     <constraint firstAttribute="height" constant="40" id="N8v-i1-Nqg"/>
                                     <constraint firstItem="ZeG-p5-IDg" firstAttribute="leading" secondItem="tGc-uL-oby" secondAttribute="leading" constant="15" id="QS1-Yf-rLB"/>
                                     <constraint firstAttribute="trailing" secondItem="ZeG-p5-IDg" secondAttribute="trailing" constant="15" id="Wmz-ja-m10"/>
+                                    <constraint firstItem="4vy-Mo-1CR" firstAttribute="top" secondItem="tGc-uL-oby" secondAttribute="top" constant="8" id="gKl-xb-nW4"/>
+                                    <constraint firstItem="4vy-Mo-1CR" firstAttribute="leading" secondItem="ZeG-p5-IDg" secondAttribute="trailing" constant="-21" id="gkP-KC-yyJ"/>
                                     <constraint firstItem="ZeG-p5-IDg" firstAttribute="centerY" secondItem="tGc-uL-oby" secondAttribute="centerY" id="pIp-GZ-j5x"/>
                                 </constraints>
                             </view>
@@ -61,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="185" id="jW9-ht-MOv"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="openCard:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bFt-B1-gKi"/>
+                                    <action selector="openCard:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1Vv-hP-nDi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,15 +100,17 @@
             </constraints>
             <size key="customSize" width="144" height="264"/>
             <connections>
-                <outlet property="imageNoPhoto" destination="7JX-op-rqh" id="a0Z-DS-EYj"/>
-                <outlet property="imageViewCast" destination="dus-to-KbA" id="Fbk-KT-vOx"/>
-                <outlet property="labelName" destination="ZeG-p5-IDg" id="gEp-PQ-6NL"/>
-                <outlet property="viewName" destination="tGc-uL-oby" id="t8D-yd-dUg"/>
+                <outlet property="contentView" destination="tGc-uL-oby" id="L8g-yf-3if"/>
+                <outlet property="horizontalModuleLabel" destination="ZeG-p5-IDg" id="Ib9-Pp-5Gi"/>
+                <outlet property="horizontalModulePicture" destination="7JX-op-rqh" id="t5n-3v-4DX"/>
+                <outlet property="horizontalModuleView" destination="tGc-uL-oby" id="DkD-zZ-YTF"/>
+                <outlet property="imageView" destination="dus-to-KbA" id="aNR-n8-S2c"/>
             </connections>
             <point key="canvasLocation" x="-2" y="55"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="ico_like" width="23" height="22"/>
         <image name="ico_nophoto_large" width="52" height="52"/>
     </resources>
 </document>

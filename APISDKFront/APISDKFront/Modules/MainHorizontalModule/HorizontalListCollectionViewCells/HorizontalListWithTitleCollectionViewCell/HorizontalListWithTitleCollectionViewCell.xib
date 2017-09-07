@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CastCell" id="gTV-IL-0wX" customClass="CastCollectionViewCell" customModule="APISDKFront" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="horizontalModuleWithTitleCellId" id="gTV-IL-0wX" customClass="HorizontalListWithTitleCollectionViewCell" customModule="APISDKFront" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="144" height="264"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="height" constant="185" id="jW9-ht-MOv"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="openCard:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bFt-B1-gKi"/>
+                                    <action selector="openCard:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1Vv-hP-nDi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,10 +92,11 @@
             </constraints>
             <size key="customSize" width="144" height="264"/>
             <connections>
-                <outlet property="imageNoPhoto" destination="7JX-op-rqh" id="a0Z-DS-EYj"/>
-                <outlet property="imageViewCast" destination="dus-to-KbA" id="Fbk-KT-vOx"/>
-                <outlet property="labelName" destination="ZeG-p5-IDg" id="gEp-PQ-6NL"/>
-                <outlet property="viewName" destination="tGc-uL-oby" id="t8D-yd-dUg"/>
+                <outlet property="contentView" destination="tGc-uL-oby" id="L8g-yf-3if"/>
+                <outlet property="horizontalModuleLabel" destination="ZeG-p5-IDg" id="Ib9-Pp-5Gi"/>
+                <outlet property="horizontalModulePicture" destination="7JX-op-rqh" id="t5n-3v-4DX"/>
+                <outlet property="horizontalModuleView" destination="tGc-uL-oby" id="DkD-zZ-YTF"/>
+                <outlet property="imageView" destination="dus-to-KbA" id="aNR-n8-S2c"/>
             </connections>
             <point key="canvasLocation" x="-2" y="55"/>
         </collectionViewCell>

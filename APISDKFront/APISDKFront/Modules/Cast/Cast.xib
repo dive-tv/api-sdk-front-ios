@@ -37,6 +37,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <connections>
+                                    <outlet property="dataSource" destination="-1" id="MkF-9n-pql"/>
+                                    <outlet property="delegate" destination="-1" id="kGh-di-6iX"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,9 +65,9 @@
             <viewLayoutGuide key="safeArea" id="Ksf-zm-8gw"/>
             <size key="customSize" width="320" height="373"/>
             <connections>
-                <outlet property="castCollectionView" destination="f1Y-38-xuG" id="QJv-ix-HpY"/>
-                <outlet property="castLabel" destination="VuP-Nq-hXx" id="BmR-Ec-zBI"/>
-                <outlet property="castMainView" destination="3io-Gb-RmR" id="Ni2-6Y-JkF"/>
+                <outlet property="horizontalCollectionView" destination="f1Y-38-xuG" id="7Nj-CX-eoV"/>
+                <outlet property="horizontalModuleLabel" destination="VuP-Nq-hXx" id="n6B-Ve-Do2"/>
+                <outlet property="horizontalModuleView" destination="3io-Gb-RmR" id="qUL-Gh-suU"/>
             </connections>
             <point key="canvasLocation" x="-153" y="13.5"/>
         </collectionViewCell>
