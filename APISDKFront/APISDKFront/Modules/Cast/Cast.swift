@@ -77,7 +77,7 @@ class Cast: SDKFrontModule, UICollectionViewDelegate, UICollectionViewDataSource
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: C.Cell.castCell, for: indexPath) as! CastCollectionViewCell
-        cell.setData(relation: (self.dataCast?.data![indexPath.row])!)
+        cell.setData(relation: (self.dataCast?.data![indexPath.row].from)!)
         
         return cell
     }

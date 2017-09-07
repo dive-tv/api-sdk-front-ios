@@ -13,6 +13,8 @@
 		317453B71F5EAAC600843E5B /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317453B61F5EAAC600843E5B /* CastCollectionViewCell.xib */; };
 		3176F81F1F5D677E00FD823D /* Overview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3176F81E1F5D677E00FD823D /* Overview.xib */; };
 		3176F8221F5D67F300FD823D /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3176F8211F5D67F300FD823D /* Overview.swift */; };
+		318DE9011F6140AB006D534C /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DE9001F6140AB006D534C /* Vehicles.swift */; };
+		318DE9061F61433C006D534C /* Vehicles.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318DE9051F61433C006D534C /* Vehicles.xib */; };
 		31DE95081F5FE10100841995 /* SelectableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE95071F5FE10000841995 /* SelectableLabel.swift */; };
 		31DE950A1F5FE10C00841995 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE95091F5FE10C00841995 /* Constants.swift */; };
 		31DE950F1F5FEC6500841995 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE950E1F5FEC6500841995 /* BasicInfo.swift */; };
@@ -69,6 +71,8 @@
 		317453B61F5EAAC600843E5B /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
 		3176F81E1F5D677E00FD823D /* Overview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Overview.xib; sourceTree = "<group>"; };
 		3176F8211F5D67F300FD823D /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
+		318DE9001F6140AB006D534C /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		318DE9051F61433C006D534C /* Vehicles.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Vehicles.xib; sourceTree = "<group>"; };
 		31DE95071F5FE10000841995 /* SelectableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableLabel.swift; sourceTree = "<group>"; };
 		31DE95091F5FE10C00841995 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		31DE950E1F5FEC6500841995 /* BasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 				3176F8211F5D67F300FD823D /* Overview.swift */,
 			);
 			path = Overview;
+			sourceTree = "<group>";
+		};
+		318DE9021F6140B2006D534C /* Vehicles */ = {
+			isa = PBXGroup;
+			children = (
+				318DE9051F61433C006D534C /* Vehicles.xib */,
+				318DE9001F6140AB006D534C /* Vehicles.swift */,
+			);
+			path = Vehicles;
 			sourceTree = "<group>";
 		};
 		31DE950D1F5FEAAA00841995 /* BasicInfo */ = {
@@ -338,9 +351,10 @@
 		32D71B151F4ED7F4000992B5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3269EF901F57FC5800341A69 /* Sizeable.xib */,
 				32D71B161F4ED7F4000992B5 /* SDKFrontModule.swift */,
 				3273E8D31F5053BD006D8F9D /* Sizeable.swift */,
-				3269EF901F57FC5800341A69 /* Sizeable.xib */,
+				318DE9021F6140B2006D534C /* Vehicles */,
 				3176F81D1F5D666600FD823D /* MovieHeader */,
 				3176F8201F5D678E00FD823D /* Overview */,
 				317453A81F5E9D3E00843E5B /* Cast */,
@@ -456,6 +470,7 @@
 				31DE95161F5FF16000841995 /* BasicInfo.xib in Resources */,
 				3269EF911F57FC5800341A69 /* Sizeable.xib in Resources */,
 				31DE951A1F5FF49700841995 /* BasicInfoCollectionViewCell.xib in Resources */,
+				318DE9061F61433C006D534C /* Vehicles.xib in Resources */,
 				322E45DF1F5542E4009FA621 /* Assets.xcassets in Resources */,
 				32D71B4D1F4ED7F4000992B5 /* Section.xib in Resources */,
 				3176F81F1F5D677E00FD823D /* Overview.xib in Resources */,
@@ -533,6 +548,7 @@
 				32D65FF71F543BEB0048A002 /* MovieHeader.swift in Sources */,
 				323600191F502D22000CED94 /* AnchorImage.swift in Sources */,
 				32D71B1F1F4ED7F4000992B5 /* CardDetailRender.swift in Sources */,
+				318DE9011F6140AB006D534C /* Vehicles.swift in Sources */,
 				31DE950A1F5FE10C00841995 /* Constants.swift in Sources */,
 				31DE950F1F5FEC6500841995 /* BasicInfo.swift in Sources */,
 				323600201F502D22000CED94 /* UIColor+Equalable.m in Sources */,

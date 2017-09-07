@@ -17,7 +17,7 @@ class CastCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageNoPhoto: UIImageView!
     
-    private var data: DupleData!
+    private var data: CardDetailResponse!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,18 +31,18 @@ class CastCollectionViewCell: UICollectionViewCell {
     }
     
    
-    func setData(relation : DupleData){
+    func setData(relation : CardDetailResponse){
     
         self.data = relation
-        self.labelName.text = relation.from.title
+        self.labelName.text = relation.title
         
         self.imageViewCast.resetImage()
         self.imageNoPhoto.isHidden = true
         
-        if(relation.from.image != nil){
-            ToolsImageDownloader.downloadImage(url: relation.from.image!.thumb, disk: false) { (image : UIImage?) in
+        if(relation.image != nil){
+            ToolsImageDownloader.downloadImage(url: relation.image!.thumb, disk: false) { (image : UIImage?) in
                 if(image != nil){
-                    self.imageViewCast.setImage(image: image!, x: CGFloat(relation.from.image?.anchorX == nil ? 50 : relation.from.image!.anchorX), y: CGFloat(relation.from.image?.anchorY == nil ? 50 : relation.from.image!.anchorY))
+                    self.imageViewCast.setImage(image: image!, x: CGFloat(relation.image?.anchorX == nil ? 50 : relation.image!.anchorX), y: CGFloat(relation.image?.anchorY == nil ? 50 : relation.image!.anchorY))
                 }else{
                     self.imageNoPhoto.isHidden = false
                 }
