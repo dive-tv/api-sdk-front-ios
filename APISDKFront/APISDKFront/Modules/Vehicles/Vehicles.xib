@@ -60,9 +60,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="Ksf-zm-8gw"/>
             <connections>
-                <outlet property="vehiclesCollectionView" destination="f1Y-38-xuG" id="xq1-cP-bYY"/>
-                <outlet property="vehiclesContentLabel" destination="VuP-Nq-hXx" id="y7B-9u-VeH"/>
-                <outlet property="vehiclesMainView" destination="3io-Gb-RmR" id="u4W-bu-67j"/>
+                <outlet property="horizontalCollectionView" destination="f1Y-38-xuG" id="OYx-le-c3x"/>
+                <outlet property="horizontalModuleLabel" destination="VuP-Nq-hXx" id="cI6-5y-w8n"/>
+                <outlet property="horizontalModuleView" destination="3io-Gb-RmR" id="Gln-rA-278"/>
             </connections>
             <point key="canvasLocation" x="-153" y="-46.5"/>
         </collectionViewCell>

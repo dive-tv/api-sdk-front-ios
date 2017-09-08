@@ -9,9 +9,10 @@
 import UIKit
 import DiveApi
 
+
 class Cast: HorizontalModule {
     
-    //MARK:--Variable that holds all the data of thos module
+    //MARK:--Variable that holds all the data of this module
      internal var dataCast : Duple?
     
     //MARK:--Validation module
@@ -31,8 +32,7 @@ class Cast: HorizontalModule {
         if let relations = self.cardDetail.getRelations(withRelationType: .casting) {
             
             self.dataCast = relations
-            self.horizontalCollectionView.register(UINib(nibName: "HorizontalListWithTitleCollectionViewCell", bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier:  C.Cell.horizontalModuleWithTitleId)
-            
+            self.setUpCollectionView()
             //MARK:--Set up title for the module
             self.horizontalModuleLabel.text = ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.cast)
             self.horizontalModuleLabel.font = ApiSDKConfiguration.secondaryFont
@@ -43,7 +43,7 @@ class Cast: HorizontalModule {
     
     //MARK:--Collectionview datasource method
    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return C.Amounts.horizontalNumberofSections
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -53,8 +53,14 @@ class Cast: HorizontalModule {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: C.Cell.horizontalModuleWithTitleId, for: indexPath) as! HorizontalListWithTitleCollectionViewCell
+        
         cell.setData(relation: (self.dataCast?.data![indexPath.row].from)!)
         
         return cell
+    }
+    
+    //MARK:--Private implementations
+    func setUpCollectionView() {
+           self.horizontalCollectionView.register(UINib(nibName: C.Cell.horizontalListWithTitleCollectionViewCell, bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier:  C.Cell.horizontalModuleWithTitleId)
     }
 }

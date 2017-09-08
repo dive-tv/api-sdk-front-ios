@@ -24,6 +24,22 @@ class HorizontalListWithTitleCollectionViewCell: UICollectionViewCell {
     //MARK:--Set up content for the cell
      func setData(relation : CardDetailResponse){
     
+        self.horizontalModuleLabel.text = relation.title
+       
+        self.imageView.resetImage()
+        self.horizontalModulePicture.isHidden = true
+        
+        if(relation.image != nil){
+            ToolsImageDownloader.downloadImage(url: relation.image!.thumb, disk: false) { (image : UIImage?) in
+                if(image != nil){
+                    self.imageView.setImage(image: image!, x: CGFloat(relation.image?.anchorX == nil ? 50 : relation.image!.anchorX), y: CGFloat(relation.image?.anchorY == nil ? 50 : relation.image!.anchorY))
+                }else{
+                    self.horizontalModulePicture.isHidden = false
+                }
+            }
+        }else{
+            self.horizontalModulePicture.isHidden = false
+        }
     }
     
     

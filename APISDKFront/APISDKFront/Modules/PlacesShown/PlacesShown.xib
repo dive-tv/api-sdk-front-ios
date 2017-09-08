@@ -37,6 +37,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <connections>
+                                    <outlet property="dataSource" destination="-1" id="CXG-BO-1Er"/>
+                                    <outlet property="delegate" destination="-1" id="ijo-0u-Lwy"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,9 +64,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="Ksf-zm-8gw"/>
             <connections>
-                <outlet property="locationCollectionView" destination="f1Y-38-xuG" id="w5M-4l-pWu"/>
-                <outlet property="locationLabel" destination="VuP-Nq-hXx" id="sEH-za-UH8"/>
-                <outlet property="locationMainView" destination="3io-Gb-RmR" id="9xq-7e-h7u"/>
+                <outlet property="horizontalCollectionView" destination="f1Y-38-xuG" id="Xej-Yo-QrV"/>
+                <outlet property="horizontalModuleLabel" destination="VuP-Nq-hXx" id="E4N-zm-Bo9"/>
+                <outlet property="horizontalModuleView" destination="3io-Gb-RmR" id="nsz-b6-aLs"/>
             </connections>
             <point key="canvasLocation" x="-153" y="-46.5"/>
         </collectionViewCell>

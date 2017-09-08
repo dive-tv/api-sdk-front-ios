@@ -92,7 +92,6 @@
             </constraints>
             <size key="customSize" width="144" height="264"/>
             <connections>
-                <outlet property="contentView" destination="tGc-uL-oby" id="L8g-yf-3if"/>
                 <outlet property="horizontalModuleLabel" destination="ZeG-p5-IDg" id="Ib9-Pp-5Gi"/>
                 <outlet property="horizontalModulePicture" destination="7JX-op-rqh" id="t5n-3v-4DX"/>
                 <outlet property="horizontalModuleView" destination="tGc-uL-oby" id="DkD-zZ-YTF"/>
