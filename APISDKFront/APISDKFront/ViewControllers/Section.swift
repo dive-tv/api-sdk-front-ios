@@ -14,6 +14,7 @@ protocol SectionDelegate : class {
     func reloadTableAndOffset ();
     func reloadTable();
     func setController(viewController : UIViewController);
+    func getParentSize(indexPath: IndexPath) -> CGSize
     
     func updateIndexPathAnalytics(indexPath : IndexPath, indexPathsAnalytics : [IndexPath]);
 }
@@ -64,7 +65,9 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
             return
         }
         
-        flowLayout.invalidateLayout()
+        //flowLayout.invalidateLayout()
+        
+        self.collectionView.reloadData()
         
     }
     
@@ -180,6 +183,24 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     
     //MARK: Section delegate
     
+    func getParentSize(indexPath: IndexPath) -> CGSize {
+        
+        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            
+            if (!ApiSDKConfiguration.separators || indexPath.row == 0 || indexPath.row % 2 == 0) {
+                
+                let height = (collectionView.bounds.width * 170) / 250
+                let width = (collectionView.bounds.height * 250) / 170
+                
+                return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: height) : CGSize(width: width, height: collectionView.bounds.height)
+            } else {
+                return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: 2) : CGSize(width: 2, height: collectionView.bounds.height)
+            }
+        }
+        
+        return CGSize.zero
+        
+    }
     
     /**
      Reload tableview and calls tab menu to refresh if exists.
@@ -235,9 +256,8 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
             cell.backgroundColor = .clear
             cell.backgroundView?.backgroundColor = .clear
             //cell.setIndexPathsAnalytics(indexPath: indexPath, indexPathsAnalytics: self.indexPathsAnalytics[indexPath] == nil ? [IndexPath]() : self.indexPathsAnalytics[indexPath]!);
-            
+            cell.indexPath = indexPath
             cell.setCardDetail(self.configSection.arrayModules[(indexPath as NSIndexPath).row / 2], _cardDetail: self.cardDetail);
-            
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
             
@@ -259,20 +279,7 @@ open class Section : UIViewController, SectionDelegate, UICollectionViewDelegate
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            
-            if (!ApiSDKConfiguration.separators || indexPath.row == 0 || indexPath.row % 2 == 0) {
-                
-                let height = (collectionView.bounds.width * 170) / 250
-                let width = (collectionView.bounds.height * 250) / 170
-                
-                return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: height) : CGSize(width: width, height: collectionView.bounds.height)
-            } else {
-                return layout.scrollDirection == .vertical ? CGSize(width: collectionView.bounds.width, height: 2) : CGSize(width: 2, height: collectionView.bounds.height)
-            }
-        }
-        
-        return CGSize.zero
+        return self.getParentSize(indexPath: indexPath)
     }
     
     

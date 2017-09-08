@@ -24,6 +24,11 @@ class Cast: HorizontalModule {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setUpCollectionView()
+    }
+    
     //MARK:--Set up details for the card
     override func setCardDetail(_ _configModule: ConfigModule, _cardDetail: CardDetailResponse) {
         super.setCardDetail(_configModule, _cardDetail: _cardDetail)
@@ -32,7 +37,7 @@ class Cast: HorizontalModule {
         if let relations = self.cardDetail.getRelations(withRelationType: .casting) {
             
             self.dataCast = relations
-            self.setUpCollectionView()
+            
             //MARK:--Set up title for the module
             self.horizontalModuleLabel.text = ToolsUtils.getStringForLocalized(name: C.LocalizedStrings.cast)
             self.horizontalModuleLabel.font = ApiSDKConfiguration.secondaryFont

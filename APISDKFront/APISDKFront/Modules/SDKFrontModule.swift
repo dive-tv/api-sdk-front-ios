@@ -12,10 +12,10 @@ import DiveApi
 open class SDKFrontModule : UICollectionViewCell, Validatable{
     
     internal var cardDetail : CardDetailResponse!;
-   
     internal var configModule : ConfigModule!;
     internal var maxItems = 10;
     internal var visibleItems = 15;
+    var indexPath: IndexPath!
     
     weak var sectionDelegate : SectionDelegate?;
     weak var cardDelegate : RenderCardDetailDelegate?;

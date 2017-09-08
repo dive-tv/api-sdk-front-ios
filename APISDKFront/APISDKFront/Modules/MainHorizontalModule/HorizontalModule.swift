@@ -20,9 +20,11 @@ class HorizontalModule: SDKFrontModule, UICollectionViewDelegate, UICollectionVi
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setUpModuleAppearance()
-        self.setUpCollectionView()
         
+        self.horizontalCollectionView.delegate = self
+        self.horizontalCollectionView.dataSource = self
+        
+        self.setUpModuleAppearance()
     }
     
 
@@ -30,6 +32,7 @@ class HorizontalModule: SDKFrontModule, UICollectionViewDelegate, UICollectionVi
         
         super.setCardDetail(_configModule, _cardDetail: _cardDetail)
        
+        
         if let layout = self.horizontalCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = ApiSDKConfiguration.scrollDirection == .vertical ? .horizontal : .vertical
         }
@@ -50,7 +53,6 @@ class HorizontalModule: SDKFrontModule, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: C.Cell.horizontalModuleWithTitleId, for: indexPath) 
         
         return cell
-        
     }
     
     //MARK:--UIcollectionView layout section
@@ -69,7 +71,7 @@ class HorizontalModule: SDKFrontModule, UICollectionViewDelegate, UICollectionVi
             
             if flowLayout.scrollDirection == .vertical {
                 
-                let widthScreen = self.horizontalCollectionView.bounds.width - (C.SizeAmounts.horizontalInset * 2)
+                let widthScreen = self.sectionDelegate!.getParentSize(indexPath: self.indexPath).width - (C.SizeAmounts.horizontalInset * 2)
                 let cellWidth = (widthScreen / 2) - (C.SizeAmounts.cellMargin * 2) - C.SizeAmounts.cellMargin
                 let cellHeight = (cellWidth * 211) / 110
                 
@@ -85,13 +87,7 @@ class HorizontalModule: SDKFrontModule, UICollectionViewDelegate, UICollectionVi
     
     //MARK:--Private implementation
     private func setUpModuleAppearance() {
-        self.horizontalModuleView.backgroundColor = ApiSDKConfiguration.modulesBackgroundColor
-    }
-    
-    private func setUpCollectionView() {
-        
-        self.horizontalCollectionView.delegate = self
-        self.horizontalCollectionView.dataSource = self
         self.horizontalCollectionView.backgroundColor = ApiSDKConfiguration.modulesBackgroundColor
+        self.horizontalModuleView.backgroundColor = ApiSDKConfiguration.modulesBackgroundColor
     }
 }
